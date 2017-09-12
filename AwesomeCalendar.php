@@ -1,103 +1,91 @@
 <?php
-//require_once('../lib/helper.php');
-//$helper = new helper();
+$names = array();
+// I hardcoded the values instead of getting them from the built-in PHP functions because there were
+// encoding problems I could not solve - the month names and the day names somehow had different encodings -
+// the month names were in windows-1251, the days of week were in UTF-8
+$names["months"] = array("Януари", "Февруари", "Март", "Април", "Май", "Юни", "Юли", "Август", "Септември", "Октомври", "Ноември", "Декември");
+$names["days"] = array("По", "Вт", "Ср", "Чт", "Пе", "Сб", "Не");
+// Idea for the calendar: http://css-tricks.com/snippets/php/build-a-calendar-table/
+function buildCalendar($month, $year)
+{
+    // It's not generally a good idea to use global variables but it works
+    global $names;
+    $daysInMonth = cal_days_in_month(CAL_GREGORIAN, $month, $year);
+    $firstDayOfMonth = mktime(0, 0, 0, $month, 1, $year);
+    // -1 is to make the day of week start from 0 (so that it is more natural to work with, using arrays)
+    $dayOfWeek = getdate($firstDayOfMonth)["wday"] - 1;
+    $calendar = "<table class=\"calendar\">
+        <caption>" . $names["months"][$month - 1] . "</caption><thead><tr>";
+    foreach ($names["days"] as $day) {
+        $calendar .= "<th class=\"header\">" . $day . "</th>";
+    }
+    $currentDay = 1;
+    $calendar .= "</tr></thead><tbody><tr>";
+    if ($dayOfWeek > 0) {
+        $calendar .= "<td colspan=\"" . $dayOfWeek . "\"></td>";
+    }
+    while ($currentDay <= $daysInMonth) {
+        if ($dayOfWeek == 7) {
+            $dayOfWeek = 0;
+            $calendar .= "</tr><tr>";
+        }
+        $calendar .= "<td>" . $currentDay . "</td>";
+        $currentDay++;
+        $dayOfWeek++;
+    }
+    if ($dayOfWeek != 7) {
+        $calendar .= "<td colspan=\"" . (7 - $dayOfWeek) . "\"></td>";
+    }
+    $calendar .= "</tr></tbody></table>";
+    return $calendar;
+}
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <title>Awesome Calendar</title>
-    <style>
-        body {
-            font-family: Verdana, sans-serif;
+    <style type="text/css">
+        table {
+            display: inline-block;
+            vertical-align: top;
+            margin: 10px;
         }
-
-        div.cont{
-            width: 650px;
-            position:relative;
-            margin: 0 auto;
-        }
-
-        h2.mainHeading{
-            text-align:center;
-        }
-        input.year{
-            border: none;
-            font-size: 44px;
-            width: 107px;
-            outline: none 0;
-            text-align: center;
-            margin: 0 auto;
-            display: block;
+        caption {
             font-weight: bold;
+            border-bottom: 1px solid #808080;
         }
-        div.month{
-            display:inline;
-            font-size:0.7em;
-            padding: 10px;
-            float:left;
-            position:relative;
-            height:130px;
+        .year {
+            font-family: Arial, sans-serif;
+            font-size: 60px;
+            font-weight: bold;
+            text-align: center;
         }
-        .month table caption, .month table th,  h2.mainHeading{
-            border-bottom: 1px solid black;
+        .header {
+            border-bottom: 1px solid #808080;
         }
-
+        .header:last-of-type {
+            color: #ff0000;
+        }
+        .months {
+            text-align: center;
+        }
     </style>
 </head>
-
 <body>
 <?php
-function getDates($year)
-{
-    $dates = array();
-    $leapYear = (date('L', strtotime((string)$year))== 1)? true: false;
-    $days = ($leapYear)?366:365;
-    for($i = 1; $i <= $days; $i++){
-        $month = date('n', mktime(0,0,0,1,$i,$year));
-        $wk = date('W', mktime(0,0,0,1,$i,$year));
-        $wkDay = date('D', mktime(0,0,0,1,$i,$year));
-        $day = date('d', mktime(0,0,0,1,$i,$year));
-        $dates[$month][$wk][$wkDay] = $day;
-    }
-    return $dates;
-}
-$year = (int)(isset($_POST['year']))?$_POST['year']:(int)date('Y');
-$dates = getDates($year);
-$weekdays = array('По'=>'Mon', 'Вт'=>'Tue', 'Ср'=>'Wed', 'Чт'=>'Thu', 'Пе'=>'Fri', 'Сб'=>'Sat', 'Не'=>'Sun');
-$bgMonths = array('Януари', 'Февруари', 'Март', 'Април', 'Май', 'Юни', 'Юли', 'Август', 'Септември', 'Октомври', 'Ноември', 'Декември');
-?>
+    echo "<div class=\"year\">" . date("Y") . "</div><div class=\"months\">";
 
-<div class="cont">
-    <h2 class="mainHeading"><form name="changeYear" id="changeYear" action="" method="post">
-            <input class="year" name="year" id="year" value="<?=(isset($_POST['year']))?$_POST['year']:(int)date('Y')?>" type="number" min="1902" onChange="document.forms['changeYear'].submit();"/>
-        </form></h2>
-    <?php foreach($dates as $month => $weeks) { ?>
-        <div  class="month">
-            <table>
-                <caption><?= $bgMonths[$month-1]; //date('F',strtotime('01-'.$month.'-'.$year)) ?></caption>
-                <thead>
-                <tr>
-                    <?php $i = 0; foreach($weekdays as $bg => $en){ ?>
-                        <th <?= ($i+1 == count($weekdays))? 'style="color:red;" ': "" ?>><?php echo $bg ;?></th>
-                        <?php $i++;}?>
-                </tr>
-                </thead>
-                <?php foreach($weeks as $week => $days){ ?>
-                    <tr>
-                        <?php foreach($weekdays as $day){ ?>
-                            <td>
-                                <?php
-                                echo (array_key_exists($day, $days)) ? $days[$day] : '&nbsp';
-                                ?>
-                            </td>
-                        <?php } ?>
-                    </tr>
-                <?php } ?>
-            </table>
-        </div>
-    <?php } ?>
-    <!--<?= $helper->AddBack(); ?>->
-</div>
+    for ($i = 1; $i <= 12; $i++) {
+
+        echo buildCalendar($i, date("Y"));
+
+        if ($i % 4 == 0) {
+            echo "<br />";
+        }
+    }
+
+    echo "</div>";
+?>
 </body>
 </html>
