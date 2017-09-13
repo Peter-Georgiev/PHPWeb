@@ -25,7 +25,6 @@
 </form>
 </body>
 </html>
-
 <?php
 if (isset($_GET['submit']) && strlen(trim($_GET['textIn'])) > 0) {
     $str = trim($_GET['textIn']);
