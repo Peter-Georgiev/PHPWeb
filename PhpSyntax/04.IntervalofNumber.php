@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL ^E_NOTICE);
 $tokens = [];
 
 $tokens[] = intval(trim(fgets(STDIN)));

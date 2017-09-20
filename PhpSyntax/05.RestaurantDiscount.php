@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL ^E_NOTICE);
 $hall = array(
     50 => array("2500", "Small Hall"),
     100 => array("5000", "Terrace"),

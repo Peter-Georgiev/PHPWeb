@@ -2,15 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd23ef80-6b5e-4c5b-a9ef-c8c10afac671" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PhpSyntax/04.IntervalofNumber.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PhpSyntax/05.RestaurantDiscount.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PhpSyntax/06.StringLength.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PhpSyntax/07.FindTheLetter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PhpSyntax/08.PointsCounter.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PhpSyntax/09.MaxSequenceOfEqualElements.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PhpSyntax/01.PersonalInfo.php" afterPath="$PROJECT_DIR$/PhpSyntax/01.PersonalInfo.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PhpSyntax/02.SumTwoNumbers.php" afterPath="$PROJECT_DIR$/PhpSyntax/02.SumTwoNumbers.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PhpSyntax/03.DumpVariable.php" afterPath="$PROJECT_DIR$/PhpSyntax/03.DumpVariable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PhpSyntax/04.IntervalofNumber.php" afterPath="$PROJECT_DIR$/PhpSyntax/04.IntervalofNumber.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PhpSyntax/05.RestaurantDiscount.php" afterPath="$PROJECT_DIR$/PhpSyntax/05.RestaurantDiscount.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PhpSyntax/06.StringLength.php" afterPath="$PROJECT_DIR$/PhpSyntax/06.StringLength.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PhpSyntax/07.FindTheLetter.php" afterPath="$PROJECT_DIR$/PhpSyntax/07.FindTheLetter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PhpSyntax/08.PointsCounter.php" afterPath="$PROJECT_DIR$/PhpSyntax/08.PointsCounter.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,24 +20,31 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="02.lab.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PhpSyntax/labWeb/02.lab.php">
+      <file leaf-file-name="08.PointsCounter.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PhpSyntax/08.PointsCounter.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="9" lean-forward="false" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
-              <folding />
+            <state relative-caret-position="17">
+              <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+              <folding>
+                <marker date="1505938326490" expanded="true" signature="214:1054" ph="..." />
+                <marker date="1505938326490" expanded="true" signature="214:1785" ph="..." />
+                <marker date="1505938326490" expanded="true" signature="242:1054" ph="..." />
+                <marker date="1505938326490" expanded="true" signature="272:1054" ph="..." />
+                <marker date="1505938326490" expanded="true" signature="648:1054" ph="..." />
+                <marker date="1505938326490" expanded="true" signature="676:1054" ph="..." />
+                <marker date="1505938326490" expanded="true" signature="704:1054" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="02.labFront.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PhpSyntax/labWeb/02.labFront.php">
+      <file leaf-file-name="09.MaxSequenceOfEqualElements.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/PhpSyntax/09.MaxSequenceOfEqualElements.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="43" column="25" lean-forward="false" selection-start-line="43" selection-start-column="25" selection-end-line="47" selection-end-column="12" />
+            <state relative-caret-position="17">
+              <caret line="1" column="4" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -45,8 +53,20 @@
       <file leaf-file-name="01.PersonalInfo.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PhpSyntax/01.PersonalInfo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="17">
+              <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+              <folding>
+                <marker date="1505938341333" expanded="true" signature="346:372" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="07.FindTheLetter.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PhpSyntax/07.FindTheLetter.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -55,8 +75,8 @@
       <file leaf-file-name="02.SumTwoNumbers.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PhpSyntax/02.SumTwoNumbers.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+            <state relative-caret-position="0">
+              <caret line="0" column="5" lean-forward="true" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -65,28 +85,8 @@
       <file leaf-file-name="03.DumpVariable.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PhpSyntax/03.DumpVariable.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="04.IntervalofNumber.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PhpSyntax/04.IntervalofNumber.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="05.RestaurantDiscount.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PhpSyntax/05.RestaurantDiscount.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+            <state relative-caret-position="17">
+              <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -95,28 +95,28 @@
       <file leaf-file-name="06.StringLength.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PhpSyntax/06.StringLength.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+            <state relative-caret-position="17">
+              <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="07.FindTheLetter.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PhpSyntax/07.FindTheLetter.php">
+      <file leaf-file-name="05.RestaurantDiscount.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PhpSyntax/05.RestaurantDiscount.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+            <state relative-caret-position="17">
+              <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="08.PointsCounter.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/PhpSyntax/08.PointsCounter.php">
+      <file leaf-file-name="04.IntervalofNumber.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PhpSyntax/04.IntervalofNumber.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="17">
+              <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -179,14 +179,16 @@
         <option value="$PROJECT_DIR$/PhpSyntax/labWeb/test.php" />
         <option value="$PROJECT_DIR$/PhpSyntax/labWeb/02.lab.php" />
         <option value="$PROJECT_DIR$/PhpSyntax/labWeb/02.labFront.php" />
-        <option value="$PROJECT_DIR$/PhpSyntax/01.PersonalInfo.php" />
-        <option value="$PROJECT_DIR$/PhpSyntax/02.SumTwoNumbers.php" />
-        <option value="$PROJECT_DIR$/PhpSyntax/03.DumpVariable.php" />
         <option value="$PROJECT_DIR$/PhpSyntax/labWeb/04.IntervalofNumber.php" />
-        <option value="$PROJECT_DIR$/PhpSyntax/04.IntervalofNumber.php" />
-        <option value="$PROJECT_DIR$/PhpSyntax/05.RestaurantDiscount.php" />
-        <option value="$PROJECT_DIR$/PhpSyntax/06.StringLength.php" />
+        <option value="$PROJECT_DIR$/PhpSyntax/08.PointsCounter.php" />
         <option value="$PROJECT_DIR$/PhpSyntax/07.FindTheLetter.php" />
+        <option value="$PROJECT_DIR$/PhpSyntax/06.StringLength.php" />
+        <option value="$PROJECT_DIR$/PhpSyntax/05.RestaurantDiscount.php" />
+        <option value="$PROJECT_DIR$/PhpSyntax/04.IntervalofNumber.php" />
+        <option value="$PROJECT_DIR$/PhpSyntax/03.DumpVariable.php" />
+        <option value="$PROJECT_DIR$/PhpSyntax/02.SumTwoNumbers.php" />
+        <option value="$PROJECT_DIR$/PhpSyntax/01.PersonalInfo.php" />
+        <option value="$PROJECT_DIR$/PhpSyntax/09.MaxSequenceOfEqualElements.php" />
       </list>
     </option>
   </component>
@@ -196,15 +198,15 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpServers">
     <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 7.1" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="492" />
-    <option name="y" value="120" />
-    <option name="width" value="783" />
-    <option name="height" value="811" />
+    <option name="x" value="508" />
+    <option name="width" value="921" />
+    <option name="height" value="870" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -224,36 +226,24 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHPWeb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHPWeb" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHPWeb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHPWeb" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PhpSyntax" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
+          <expand>
+            <path>
+              <item name="PHPWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PHPWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="PHPWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PHPWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="PhpSyntax" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
@@ -287,16 +277,24 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHP Script.07.FindTheLetter.php">
-    <configuration default="false" name="05.RestaurantDiscount.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/PhpSyntax/05.RestaurantDiscount.php" scriptParameters="server:run">
-      <method />
+  <component name="RunManager" selected="PHP Script.09.MaxSequenceOfEqualElements.php">
+    <configuration name="01.PersonalInfo.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/PHPWeb/PhpSyntax/01.PersonalInfo.php" />
+    <configuration name="05.RestaurantDiscount.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/PhpSyntax/05.RestaurantDiscount.php" scriptParameters="server:run" />
+    <configuration name="06.StringLength.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/PhpSyntax/06.StringLength.php" scriptParameters="server:run" />
+    <configuration name="07.FindTheLetter.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/PhpSyntax/07.FindTheLetter.php" scriptParameters="server:run" />
+    <configuration name="08.PointsCounter.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/PhpSyntax/08.PointsCounter.php" scriptParameters="server:run" />
+    <configuration name="09.MaxSequenceOfEqualElements.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/PhpSyntax/09.MaxSequenceOfEqualElements.php" scriptParameters="server:run" />
+    <configuration name="PHPWeb" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$" />
+    <configuration name="PHPWeb_Node_js" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="C:/Program Files/nodejs/node" working-dir="$PROJECT_DIR$" />
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
     </configuration>
-    <configuration default="false" name="01.PersonalInfo.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/PHPWeb/PhpSyntax/01.PersonalInfo.php">
-      <method />
-    </configuration>
-    <configuration default="false" name="07.FindTheLetter.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/PhpSyntax/07.FindTheLetter.php" scriptParameters="server:run">
-      <method />
-    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/PersonalInfo.php" scriptParameters="server:run" />
     <configuration default="true" type="CodeceptionConfigurationType" factoryName="Codeception">
       <PhpTestRunnerSettings />
       <method />
@@ -343,9 +341,6 @@
     <configuration default="true" type="PhpHttpRequestRunConfigurationType" factoryName="PHP HTTP Request">
       <method />
     </configuration>
-    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/PersonalInfo.php" scriptParameters="server:run">
-      <method />
-    </configuration>
     <configuration default="true" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug">
       <method />
     </configuration>
@@ -357,15 +352,6 @@
       <method />
     </configuration>
     <configuration default="true" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application">
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -388,28 +374,23 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <configuration default="false" name="06.StringLength.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/PhpSyntax/06.StringLength.php" scriptParameters="server:run">
-      <method />
-    </configuration>
-    <configuration default="false" name="PHPWeb_Node_js" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="C:/Program Files/nodejs/node" working-dir="$PROJECT_DIR$">
-      <method />
-    </configuration>
-    <configuration default="false" name="PHPWeb" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$">
-      <method />
-    </configuration>
-    <list size="6">
+    <list size="8">
       <item index="0" class="java.lang.String" itemvalue="PHP Script.06.StringLength.php" />
       <item index="1" class="java.lang.String" itemvalue="Node.js.PHPWeb_Node_js" />
       <item index="2" class="java.lang.String" itemvalue="PHP Built-in Web Server.PHPWeb" />
       <item index="3" class="java.lang.String" itemvalue="PHP Script.05.RestaurantDiscount.php" />
       <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.01.PersonalInfo.php" />
       <item index="5" class="java.lang.String" itemvalue="PHP Script.07.FindTheLetter.php" />
+      <item index="6" class="java.lang.String" itemvalue="PHP Script.08.PointsCounter.php" />
+      <item index="7" class="java.lang.String" itemvalue="PHP Script.09.MaxSequenceOfEqualElements.php" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="PHP Script.07.FindTheLetter.php" />
-        <item index="1" class="java.lang.String" itemvalue="PHP Script.05.RestaurantDiscount.php" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.01.PersonalInfo.php" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="PHP Script.09.MaxSequenceOfEqualElements.php" />
+        <item index="1" class="java.lang.String" itemvalue="PHP Script.08.PointsCounter.php" />
+        <item index="2" class="java.lang.String" itemvalue="PHP Script.07.FindTheLetter.php" />
+        <item index="3" class="java.lang.String" itemvalue="PHP Script.05.RestaurantDiscount.php" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.01.PersonalInfo.php" />
       </list>
     </recent_temporary>
   </component>
@@ -446,26 +427,27 @@
       <workItem from="1505832635154" duration="232000" />
       <workItem from="1505833118194" duration="14992000" />
       <workItem from="1505901541201" duration="12113000" />
+      <workItem from="1505922913920" duration="13337000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86502000" />
+    <option name="totallyTimeSpent" value="99839000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="492" y="120" width="783" height="811" extended-state="0" />
+    <frame x="508" y="0" width="921" height="870" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22555411" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20325203" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29529244" sideWeight="0.50455135" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29529244" sideWeight="0.49544865" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29387754" sideWeight="0.49544865" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292517" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43794578" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33333334" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -477,6 +459,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -486,7 +469,7 @@
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="processedProjectFiles" value="true" />
+    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -520,23 +503,15 @@
           <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="58" />
+      <option name="time" value="84" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/InformationTable.php" />
     <entry file="file://$PROJECT_DIR$/GetFormData.php" />
     <entry file="file://$PROJECT_DIR$/TimeUntilNewYear.php" />
     <entry file="file://$PROJECT_DIR$/index.html" />
     <entry file="file://$PROJECT_DIR$/AwesomeCalendar.php" />
-    <entry file="file://$PROJECT_DIR$/PHPforms/PrintTags.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="5" lean-forward="false" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PHPforms/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -552,47 +527,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PHPforms/CalculateInterest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="84" column="10" lean-forward="false" selection-start-line="84" selection-start-column="10" selection-end-line="84" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PHPforms/MostFrequentTag.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PHPforms/Lab/ValidatingUserInput.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PHPforms/CVGenerator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PHPforms/Lab/script.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PHPforms/Lab/lab.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -605,20 +543,8 @@
     <entry file="file://$PROJECT_DIR$/js/10. AddOrRemoveElements.js" />
     <entry file="file://$PROJECT_DIR$/js/14.ParseJSONobjects.js" />
     <entry file="file://$PROJECT_DIR$/js/15.TurnObjectIntoJSONstring.js" />
-    <entry file="file://$PROJECT_DIR$/PhpSyntax/TimeUntilNewYear.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="32" lean-forward="false" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PhpSyntax/DumpVariable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/PhpSyntax/TimeUntilNewYear.php" />
+    <entry file="file://$PROJECT_DIR$/PhpSyntax/DumpVariable.php" />
     <entry file="file://$PROJECT_DIR$/PhpSyntax/PersonalInfo.php" />
     <entry file="file://$PROJECT_DIR$/PhpSyntax/lab.php" />
     <entry file="file://$PROJECT_DIR$/PhpSyntax/lab/02.lab.php" />
@@ -643,7 +569,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -651,7 +576,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
           <caret line="35" column="7" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="35" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -659,7 +583,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="17" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -673,72 +596,138 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PhpSyntax/labWeb/02.labFront.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
+        <state relative-caret-position="731">
           <caret line="43" column="25" lean-forward="false" selection-start-line="43" selection-start-column="25" selection-end-line="47" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PhpSyntax/01.PersonalInfo.php">
+    <entry file="file://$PROJECT_DIR$/PHPforms/CVGenerator.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="-168">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PhpSyntax/02.SumTwoNumbers.php">
+    <entry file="file://$PROJECT_DIR$/PHPforms/CalculateInterest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+        <state relative-caret-position="-127">
+          <caret line="84" column="10" lean-forward="false" selection-start-line="84" selection-start-column="10" selection-end-line="84" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PhpSyntax/03.DumpVariable.php">
+    <entry file="file://$PROJECT_DIR$/PHPforms/Lab/lab.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+        <state relative-caret-position="77">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PhpSyntax/04.IntervalofNumber.php">
+    <entry file="file://$PROJECT_DIR$/PHPforms/Lab/ValidatingUserInput.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PhpSyntax/05.RestaurantDiscount.php">
+    <entry file="file://$PROJECT_DIR$/PHPforms/MostFrequentTag.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        <state relative-caret-position="-535">
+          <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PhpSyntax/06.StringLength.php">
+    <entry file="file://$PROJECT_DIR$/PHPforms/PrintTags.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PhpSyntax/07.FindTheLetter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+        <state relative-caret-position="315">
+          <caret line="34" column="5" lean-forward="false" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PhpSyntax/08.PointsCounter.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+          <folding>
+            <marker date="1505938326490" expanded="true" signature="214:1054" ph="..." />
+            <marker date="1505938326490" expanded="true" signature="214:1785" ph="..." />
+            <marker date="1505938326490" expanded="true" signature="242:1054" ph="..." />
+            <marker date="1505938326490" expanded="true" signature="272:1054" ph="..." />
+            <marker date="1505938326490" expanded="true" signature="648:1054" ph="..." />
+            <marker date="1505938326490" expanded="true" signature="676:1054" ph="..." />
+            <marker date="1505938326490" expanded="true" signature="704:1054" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PhpSyntax/07.FindTheLetter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PhpSyntax/06.StringLength.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PhpSyntax/05.RestaurantDiscount.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PhpSyntax/04.IntervalofNumber.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PhpSyntax/03.DumpVariable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PhpSyntax/02.SumTwoNumbers.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="5" lean-forward="true" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PhpSyntax/01.PersonalInfo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+          <folding>
+            <marker date="1505938341333" expanded="true" signature="346:372" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PhpSyntax/09.MaxSequenceOfEqualElements.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="4" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL ^E_NOTICE);
 $sentence = trim(fgets(STDIN));
 $tokens = explode(' ', trim(fgets(STDIN)));
 

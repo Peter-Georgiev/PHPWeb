@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL ^E_NOTICE);
 $firstNane = trim(fgets(STDIN));
 $lastName = trim(fgets(STDIN));
 $age = intval(trim(fgets(STDIN)));
