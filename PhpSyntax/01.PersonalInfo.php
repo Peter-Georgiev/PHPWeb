@@ -1,27 +1,12 @@
-<body>
-<form method="get">
-    First name: <input type="text" name="firstname"  value="FirstName"/><br>
-    Last name: <input type="text" name="lastname" value="LastName"/><br>
-    Age: <input type="number" name="age"/><br>
-    <input type="submit" name="sbm" />
-</form>
-
-</body>
 <?php
+$firstNane = trim(fgets(STDIN));
+$lastName = trim(fgets(STDIN));
+$age = intval(trim(fgets(STDIN)));
 
-$fullName = '';
-$age = 15;
-
-if (isset($_GET['sbm'])) {
-    $firstNane = $_GET['firstname'];
-    $lastName = $_GET['lastname'];
-    $age = intval($_GET['age']);
-    if ($firstNane != 'FirstName' && $lastName != 'LastName') {
-        $fullName = $firstNane . ' ' . $lastName;
-    }
-}
-
-if ($fullName != '' && $age > 0) {
+if ($lastName >= 0) {
+    $fullName = $firstNane . ' ' . $lastName;
     echo 'My name is ' . $fullName . ' and I am ' . $age . ' year old.';
+} else {
+    echo 'My name is ' . $fullName . ' and I am Error - ' . $age . ' year old.';
 }
 
