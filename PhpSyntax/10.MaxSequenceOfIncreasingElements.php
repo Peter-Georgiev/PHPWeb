@@ -2,6 +2,7 @@
 error_reporting(E_ALL ^E_NOTICE);
 
 $arr = explode(' ', trim(fgets(STDIN)));
+//$arr =  explode(' ', '');
 
 $arr = intValue($arr);
 
@@ -14,9 +15,17 @@ function searchEqual($arr){
     $maxCount = 0;
     for ($i = 0; $i < count($arr); $i++) {
         $count = 0;
+        $indexPrevious = $i - 1;
+        if ($indexPrevious < 0){
+            continue;
+        }
 
         for ($j = $i; $j < count($arr); $j++) {
-            if ($arr[$i] === $arr[$j]) {
+            $firstElement = $arr[$indexPrevious] + 1;
+            $indexPrevious++;
+            $secondElement = $arr[$j];
+
+            if ($firstElement == $secondElement) {
                 $count++;
             } else {
                 break;
@@ -29,7 +38,7 @@ function searchEqual($arr){
         }
     }
 
-    $prn = array('lastElement' => $lastElement, 'maxCount' => $maxCount);
+    $prn = array('lastElement' => $lastElement - $maxCount, 'maxCount' => $maxCount + 1);
     return $prn;
 }
 
@@ -42,6 +51,7 @@ function printResult($prn){
         if ($i < $maxCount - 1){
             echo ' ';
         }
+        $lastElement++;
     }
 }
 
