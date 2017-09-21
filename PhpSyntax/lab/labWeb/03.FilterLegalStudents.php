@@ -1,10 +1,20 @@
+<?php
+$names = '';
+$ages = '';
+
+if (isset($_GET['names']) && isset($_GET['ages'])){
+    $delimeter = $_GET['delimeter'];
+    $names = explode($delimeter, $_GET['names']);
+    $ages = explode($delimeter, $_GET['ages']);
+}
+?>
 <form method="get">
     <div>
         Delimeter:
         <select name="delimeter">
             <option value=",">,</option>
             <option value="|">|</option>
-            <option value="&">&amp;</option>
+            <option value="&">&</option>
         </select>
     </div>
     <div>
@@ -19,7 +29,7 @@
         <input type="submit" name="filter" value=" Filter! "/>
     </div>
 </form>
-<?php if (isset($names, $ages)): ?>
+<?php if (isset($_GET['filter'])): ?>
     <table border="1" cellpadding="0">
         <thead>
         <tr>
@@ -39,16 +49,3 @@
         </tbody>
     </table>
 <?php endif; ?>
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-
-<?php if ($count > 0): ?>
-<div class="container">
-    <ul class="pager">
-        <?php for ($i = 1; $i < $count; $i++): ?>
-            <?= '<li><a href="?page=' . $i . '">' . 'Previous' . '</a></li>' ?>
-            <?= '<li><a href="?page=' . $i . '">' . $i . '</a></li>' ?>
-        <?php endfor; ?>
-        <li><a href="?page=<?php $count; ?>">Next</a></li>
-    </ul>
-</div>
-<?php endif; var_dump($_REQUEST)?>

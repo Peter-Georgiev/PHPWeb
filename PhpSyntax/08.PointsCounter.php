@@ -1,17 +1,16 @@
 <?php
-error_reporting(E_ALL ^E_NOTICE);
+//error_reporting(E_ALL ^E_NOTICE);
 $data = [];
 $readLine = '';
-
 while ("Result" != $readLine = trim(fgets(STDIN))) {
-
+    //•	The team names will be at least 2 characters long
     $removeSymbols = preg_replace("/([$%&@*]+)/", "", $readLine);
 
     preg_match("/(?<team>[A-Z]{2,})\s*\|\s*(?<player>[A-Z][a-z]+)\s*\|\s*(?<points>[0-9]+)/",
         $removeSymbols, $teamPlayerMatch);
     if (count($teamPlayerMatch) > 0) {
         $points = intval($teamPlayerMatch["points"]);
-        if ($points > 0 && $points < 101){
+        if ($points > 0 && $points < 101) { //•	The points for each player will be in the interval [1…100]
             $team = $teamPlayerMatch["team"];
             $player = $teamPlayerMatch["player"];
 
@@ -23,7 +22,7 @@ while ("Result" != $readLine = trim(fgets(STDIN))) {
         $removeSymbols, $playerTeamMatch);
     if (count($playerTeamMatch) > 0) {
         $points = intval($playerTeamMatch["points"]);
-        if ($points > 0 && $points < 101){
+        if ($points > 0 && $points < 101) { //•	The points for each player will be in the interval [1…100]
             $player = $playerTeamMatch["player"];
             $team = $playerTeamMatch["team"];
 

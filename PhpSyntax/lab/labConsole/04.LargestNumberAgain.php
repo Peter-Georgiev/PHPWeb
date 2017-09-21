@@ -4,5 +4,4 @@ $numbers = [];
 while ($number = intval(fgets(STDIN))){
     $numbers[] = $number;
 }
-$max = max($numbers);
-echo "Max: " . $max;
+echo "Max: " . max($numbers);

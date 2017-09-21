@@ -4,7 +4,7 @@ $contact = array(
     'Phone Number' => '0884-888-888',
     'Age' => '67',
     'Address' => 'Suhata Reka'
-    );
+);
 ?>
 <!DOCTYPE html>
 <style>
@@ -13,10 +13,12 @@ $contact = array(
         border: 1px solid black;
         border-collapse: collapse;
     }
-    th{
+
+    th {
         background-color: #ff9a30;
         text-align: left;
     }
+
     td {
         width: 50%;
         text-align: right;
