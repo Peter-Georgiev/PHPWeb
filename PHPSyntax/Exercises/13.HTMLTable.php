@@ -38,7 +38,7 @@ if (isset($_GET['sbm'])){
     }
 
     form {
-        margin: 10px 0px 10px 0px;
+        margin: 10px 0 10px 0;
     }
 
     .line {
