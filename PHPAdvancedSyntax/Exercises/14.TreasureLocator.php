@@ -1,4 +1,6 @@
 <?php
+declare(strict_types = 1);
+
 $input = explode(", ", trim(fgets(STDIN)));
 
 for($i=0; $i < count($input); $i = $i + 2) {
