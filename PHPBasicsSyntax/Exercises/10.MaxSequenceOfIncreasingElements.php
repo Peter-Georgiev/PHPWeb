@@ -1,30 +1,32 @@
 <?php
-//error_reporting(E_ALL ^E_NOTICE);
+declare(strict_types = 1);
 
 $arr = explode(' ', trim(fgets(STDIN)));
 
-$arr = intValue($arr);
+$arr = floatValue($arr);
 
 $prn = searchEqual($arr);
 
-printResult($prn);
+printResult($prn, $arr);
 
-function searchEqual($arr){
-    $lastElement = 0;
+function searchEqual($arr)
+{
+    $lastIndex = 0;
     $maxCount = 0;
+
     for ($i = 0; $i < count($arr); $i++) {
         $count = 0;
         $indexPrevious = $i - 1;
-        if ($indexPrevious < 0){
+        if ($indexPrevious < 0) {
             continue;
         }
 
         for ($j = $i; $j < count($arr); $j++) {
-            $firstElement = $arr[$indexPrevious] + 1;
+            $firstElement = $arr[$indexPrevious];
             $indexPrevious++;
             $secondElement = $arr[$j];
 
-            if ($firstElement == $secondElement) {
+            if ($firstElement < $secondElement) {
                 $count++;
             } else {
                 break;
@@ -32,34 +34,34 @@ function searchEqual($arr){
 
             if ($count > $maxCount) {
                 $maxCount = $count;
-                $lastElement = $arr[$j];
+                $lastIndex = $j;
             }
         }
     }
 
-    $prn = array('lastElement' => $lastElement - $maxCount, 'maxCount' => $maxCount + 1);
+    $prn = array('$lastIndex' => $lastIndex, 'maxCount' => $maxCount + 1);
     return $prn;
 }
 
-function printResult($prn){
-    $lastElement = $prn['lastElement'];
+function printResult($prn, $arr)
+{
     $maxCount = $prn['maxCount'];
+    $lastIndex = $prn['$lastIndex']  - $maxCount + 1;
 
-    for ($i = 0; $i < $maxCount; $i++){
-        echo $lastElement;
-        if ($i < $maxCount - 1){
-            echo ' ';
-        }
-        $lastElement++;
+    $prnElement = array_slice($arr, $lastIndex, $maxCount );
+
+    foreach ($prnElement as $p){
+        echo "$p ";
     }
 }
 
-function intValue($arr){
-    $intArr = [];
+function floatValue($arr)
+{
+    $floatArr = [];
 
     foreach ($arr as $value) {
-        $intArr[] = intval($value);
+        $floatArr[] = floatval($value);
     }
 
-    return $intArr;
+    return $floatArr;
 }
