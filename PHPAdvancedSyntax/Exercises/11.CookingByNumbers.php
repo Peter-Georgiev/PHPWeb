@@ -23,7 +23,7 @@ foreach ($commands as $command) {
             $num = commandFillter($num);
             break;
     }
-    echo $num . "\n\r";
+    echo $num . "\n";
 }
 
 function commandChop(float $num){

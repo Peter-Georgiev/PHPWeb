@@ -1,30 +1,26 @@
 <?php
 declare(strict_types = 1);
 
-$input =[];
-//$input = ['21', 'residential'];
-for ((int)$i = 0; $i < 2; $i++){
-    $input[] = trim(fgets(STDIN));
-}
-$speed = floatval($input[0]);
+$speed = floatval(trim(fgets(STDIN)));
+$zone = trim(fgets(STDIN));
 
-$limit = getLimit($input);
+$limit = getLimit($zone);
 $infraction = getInfraction($speed, $limit);
 $overSpeed = $speed - $limit;
-(string)$message ='';
+(string)$message = '';
 
 if ($infraction){
-    $message = 'speeding';
-    if ($overSpeed > 40){
-        $message = 'reckless driving';
-    } elseif ($overSpeed > 20){
+    $message = 'reckless driving';
+    if ($overSpeed < 20) {
+        $message = 'speeding';
+    } elseif ($overSpeed < 40) {
         $message = 'excessive speeding';
     }
 }
+
 echo $message;
 
-function getLimit($input){
-    (string)$zone = $input[1];
+function getLimit(string $zone){
     switch ($zone){
         case 'motorway':
             $speedLimit = 130;
@@ -48,10 +44,10 @@ function getLimit($input){
 function getInfraction($speed, $limit){
     $overSpeed = $speed - $limit;
 
-    $result = true;
-    if ($overSpeed <= 0){
+    if ($overSpeed < 0){
         $result = false;
+    } else {
+        $result = true;
     }
-
     return $result;
 }

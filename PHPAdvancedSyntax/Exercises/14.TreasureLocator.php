@@ -8,17 +8,17 @@ for($i=0; $i < count($input); $i = $i + 2) {
     $y = $input[$i + 1];
 
     if(checkTokelau($x, $y)) {
-        echo "Tokelau\n\r";
+        echo "Tokelau\n";
     } elseif (checkTuvalu($x, $y)) {
-        echo "Tuvalu\n\r";
+        echo "Tuvalu\n";
     } elseif(checkSamoa($x, $y)) {
-        echo "Samoa\n\r";
+        echo "Samoa\n";
     } elseif (checkTonga($x, $y)) {
-        echo "Tonga\n\r";
+        echo "Tonga\n";
     } elseif(checkCook($x, $y)) {
-        echo "Cook\n\r";
+        echo "Cook\n";
     } else {
-        echo "On the bottom of the ocean\n\r";
+        echo "On the bottom of the ocean\n";
     }
 }
 
