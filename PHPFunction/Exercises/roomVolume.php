@@ -1,6 +1,6 @@
 <?php
-/* Problem 04.	Volume of Rooms */
 declare(strict_types=1);
+/* Problem 04.	Volume of Rooms */
 
 $room = [
     'kithen' => ['width' => 3, 'length' => 2, 'height' => 2.4],
