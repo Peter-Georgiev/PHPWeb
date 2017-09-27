@@ -8,8 +8,8 @@ $room = [
     'bedroom' => ['width' => 5, 'length' => 3, 'height' => 2.2],
 ];
 
-print_r(array_map(function (&$current_room) {
-        return $current_room['width'] * $current_room['length'] * $current_room['height'];
+print_r(array_map(function (&$value) {
+        return $value['width'] * $value['length'] * $value['height'];
     }, // callback
         $room // input array
     )

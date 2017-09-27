@@ -1,13 +1,26 @@
 <?php
-// DON'T WORKS!
 declare(strict_types=1);
 
-$input = ['Hello ', 'there.', 'This is just another long string', 'that would pass the check.', ' but', ' this', ' will', ' not', 'pass it.'];
-
 $above = 20;
-print_r(array_reduce($input,
-    function ($carry, $item) use ($above) {
-        return strlen($item) > $above ?
-            $carry .= $item : $carry;
+$input = [
+    'Hello ',
+    'there.',
+    'This is just another long string',
+    'that would pass the check.',
+    ' but',
+    ' this',
+    ' will',
+    ' not',
+    'pass it.'
+];
+
+echo filter($input, $above, function ($str) use ($above): bool {
+    return strlen($str) > $above ? true : false;
+});
+
+function filter(array $input, int $above, callable $concatLongStr, string $output = ""): string {
+    foreach ($input as $value) {
+        $output .= ($concatLongStr($value) === true) ? $value : '';
     }
-));
+    return $output;
+};

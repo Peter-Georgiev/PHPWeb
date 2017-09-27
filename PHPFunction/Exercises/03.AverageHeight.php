@@ -8,11 +8,10 @@ $people = [
     ['name' => 'Martin', 'height' => 1.82]
 ];
 
-$averageHeight = array_reduce(
-    $people,
-    function ($carry, $item) : float {
-        return $carry += $item['height'];
-    }
-) / count($people);
+$averageHeight = array_reduce($people, // input array
+        function ($carry, $item): float {
+            return $carry += $item['height'];
+        } // callback
+    ) / count($people);
 
 echo "Average height is $averageHeight meters";

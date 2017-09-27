@@ -1,7 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Peter
- * Date: 26.09.2017
- * Time: 20:46 ч.
- */
+declare(strict_types=1);
+
+$input = 'Hello, there! ';
+$n = 3;
+
+$repeatString = function (&$repeatString, string &$input, int $n = 1, string $out = ""): string {
+    return $n > 0 ?
+        $repeatString($repeatString, $input, $n - 1, $out .= $input) : // Recursion
+        $out;
+}; // anonymous function
+
+echo $repeatString($repeatString, $input, $n); //Side effect

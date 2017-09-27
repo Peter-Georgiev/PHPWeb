@@ -9,4 +9,8 @@ $people = [
     ['name' => 'Martin', 'height' => 1.82]
 ];
 
-print_r($people);
+print_r(array_filter($people, //input array
+    function ($kvp): bool {
+        return $kvp['height'] > 1.80;
+    } //callback
+));

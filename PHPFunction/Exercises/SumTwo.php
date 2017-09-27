@@ -7,6 +7,6 @@ $b = floatval(trim(fgets(STDIN)));
 
 $sumTwo = function(float $a, float $b){
     return $a + $b;
-};
+}; // anonymous function
 
 echo $sumTwo($a, $b);
