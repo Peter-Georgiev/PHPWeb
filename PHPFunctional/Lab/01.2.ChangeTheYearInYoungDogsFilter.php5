@@ -6,6 +6,7 @@ $animals = [
     ['name' => 'Fluffy', 'type' => 'cat', 'age' => 14],
     ['name' => 'Spelunky', 'type' => 'dog', 'age' => 4],
     ['name' => 'Hank', 'type' => 'dog', 'age' => 11],
+    ['name' => 'Spelunky', 'type' => 'dog', 'age' => 8]
 ];
 $age = 9;
 $type =  'dog';
