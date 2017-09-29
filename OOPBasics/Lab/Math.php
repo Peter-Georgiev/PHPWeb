@@ -9,31 +9,45 @@ class Math
     private $math_sum;
     private $math_div;
 
-    public function __construct($a, $b)
+    /**
+     * Math constructor.
+     * @param float $a
+     * @param float $b
+     */
+    public function __construct(float $a, float $b)
     {
         $this->num_a = $a;
         $this->num_b = $b;
     }
 
     /**
-     * @return mixed
+     * @return float
      */
-    public function getMathSum()
+    public function getMathSum(): float
     {
         $this->math_sum = $this->num_a + $this->num_b;
         return $this->math_sum;
     }
 
     /**
-     * @return mixed
+     * @return float
      */
-    public function getMathDiv()
+    public function getMathDiv(): float
     {
-        if($this->num_a == 0 || $this->num_b == 0){
+        if($this->isZero($this->num_a) || $this->isZero($this->num_b)){
             exit("division by zero is not possible");
             //throw new \Exception("division by zero is not possible");
         }
         $this->math_div = $this->num_a / $this->num_b;
         return $this->math_div;
+    }
+
+    /**
+     * @param float $num
+     * @return bool
+     */
+    private function isZero(float $num): bool
+    {
+        return $num == 0;
     }
 }

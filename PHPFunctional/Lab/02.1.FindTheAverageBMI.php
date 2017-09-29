@@ -1,5 +1,9 @@
 <?php
 declare(strict_types=1);
+/* 2.1.Find the average BMI
+ * 2.2.Find the average BMI above some value
+ */
+
 
 $people = [
     ['name' => 'John', 'weight' => 69, 'height' => 1.69],
@@ -7,10 +11,11 @@ $people = [
     ['name' => 'Ivan', 'weight' => 75, 'height' => 1.72],
     ['name' => 'Mitko', 'weight' => 95, 'height' => 1.70]
 ];
+$value = 70;
 
-$bmiCalcAvg = function ($carry, $item): float {
-    $carry += floatval($item['weight']) + floatval($item['height']);
-    return $carry;
+$bmiCalcAvg = function ($carry, $item) use ($value): float {
+    return floatval($item['weight']) + floatval($item['height']) > $value ?
+        $carry += floatval($item['weight']) + floatval($item['height']) : $carry += 0;
 };
 
 $bmiAvg = array_reduce($people, $bmiCalcAvg) / count($people);
