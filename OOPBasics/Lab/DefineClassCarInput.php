@@ -8,12 +8,14 @@ include "DefineClassCar.php";
 
 use SoftUni\Oop\Car;
 
-/* TEST
-* Nissan X-trail 2007 petrol 5+1 125/n
-* Renault Scenic 2001 diesel 6+1 115/n
-* Audi A6 2001 petrol 5+1 135/n
-* Renault Clio 1995 diesel 4+1 115/n
+/* TEST ARRAY CLI
+Nissan X-trail 2007 petrol 5+1 125/n
+Renault Scenic 2001 diesel 6+1 115/n
+Audi A6 2001 petrol 5+1 135/n
+Renault Clio 1995 diesel 4+1 115/n
 */
+
+//$str = substr('115/n', 0, -2);
 
 
 $arr = readCLI();
@@ -27,6 +29,13 @@ function readCLI(): array
     $arr = [];
     for ($i = 0; $i < 4; $i++) {
         $input = explode(' ', trim(fgets(STDIN)));
+
+        for ($j = 0; $j < count($input); $j++) {
+            if(substr($input[$j], -2, 2) == '/n') {
+                $temp = substr($input[$j], 0, -2);
+                $input[$j] = $temp;
+            }
+        }
 
         if (count($input) != 6) {
             continue;
