@@ -1,6 +1,5 @@
 <?php
 declare(strict_types=1);
-
 /* Problem 03. Opinion Poll */
 
 class Person

@@ -11,11 +11,11 @@ class Number
         $this->number = $number;
     }
 
-    private function lastDigitName(): string
+    private function returnDigitName(): string
     {
-        //$this->number %= 10;
-        $lastDigit = intval(substr((string)$this->number, -1));
-        switch ($lastDigit) {
+        $this->number %= 10;
+        //$lastDigit = intval(substr((string)$this->number, -1));
+        switch ($this->number) {
             case 0:
                 $this->digitName = 'zero';
                 break;
@@ -52,11 +52,11 @@ class Number
 
     public function __toString()
     {
-        return $this->lastDigitName();
+        return $this->returnDigitName();
     }
 }
 
-$number = intval(fgetc(STDIN));
+$number = intval(fgets(STDIN));
 
 $lastDigit = new Number($number);
 

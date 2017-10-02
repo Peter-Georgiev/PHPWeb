@@ -39,7 +39,11 @@ class Person
         return $this->name . " " . $this->age;
     }
 }
+
 $name = trim(fgets(STDIN));
+
 $age = intval(trim(fgets(STDIN)));
+
 $person = new Person($name,$age);
+
 echo $person;
