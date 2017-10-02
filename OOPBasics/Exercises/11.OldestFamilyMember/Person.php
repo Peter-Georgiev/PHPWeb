@@ -12,17 +12,11 @@ class Person
         $this->age = $age;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @return int
-     */
     public function getAge(): int
     {
         return $this->age;

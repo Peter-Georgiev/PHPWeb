@@ -1,0 +1,10 @@
+<?php
+declare(strict_types=1);
+include "Number.php";
+
+$number = intval(fgetc(STDIN));
+
+$lastDigit = new Number($number);
+
+echo $lastDigit;
+
