@@ -8,6 +8,7 @@ readEngineAndCar($engines, 'Engine');
 $cars = [];
 readEngineAndCar($cars, 'Car');
 
+$index = count($cars);
 foreach ($cars as $car) {
     foreach ($engines as $engine) {
         if ($car->getEngine() == $engine->getModel()) {
@@ -17,9 +18,13 @@ foreach ($cars as $car) {
             echo "\t\tDisplacement: " . $engine->getDisplacment() . PHP_EOL; //<EngineDisplacement>
             echo "\t\tEfficiency: " . $engine->getEfficiency() . PHP_EOL; //<EngineEfficiency>
             echo "\tWeight: " . $car->getWeight() . PHP_EOL; //<CarWeight>
-            echo "\tColor: " . $car->getColor() . PHP_EOL; //<CarColor>
+            echo "\tColor: " . $car->getColor(); //<CarColor>
         }
     }
+    if ($index > 1) {
+        echo PHP_EOL;
+    }
+    $index--;
 }
 
 function readEngineAndCar(array &$arr, string $objStr): array {
@@ -29,23 +34,23 @@ function readEngineAndCar(array &$arr, string $objStr): array {
 
         if (count($input) === 2) {
             $model = trim($input[0]);
-            $arr[] = new $objStr($model, trim($input[1]));
+            $arr[$model] = new $objStr($model, trim($input[1]));
             continue;
         }
 
         if (count($input) === 3) {
             $model = trim($input[0]);
             if (is_numeric($input[2])){
-                $arr[] = new $objStr($model, trim($input[1]), trim($input[2]));
+                $arr[$model] = new $objStr($model, trim($input[1]), trim($input[2]));
                 continue;
             }
-            $arr[] = new $objStr($model, trim($input[1]), 'n/a', trim($input[2]));
+            $arr[$model] = new $objStr($model, trim($input[1]), 'n/a', trim($input[2]));
             continue;
         }
 
         if (count($input) === 4) {
             $model = trim($input[0]);
-            $arr[] = new $objStr($model, trim($input[1]), trim($input[2]), trim($input[3]));
+            $arr[$model] = new $objStr($model, trim($input[1]), trim($input[2]), trim($input[3]));
         }
     }
     return $arr;

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-class Car
+class Car extends Engine
 {
     private $model;
     private $engine;
