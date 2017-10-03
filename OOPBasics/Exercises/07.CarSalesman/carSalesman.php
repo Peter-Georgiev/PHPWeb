@@ -23,24 +23,29 @@ foreach ($cars as $car) {
 }
 
 function readEngineAndCar(array &$arr, string $objStr): array {
-    $n = intval(trim(fgets(STDIN)));
+    $n = intval(fgets(STDIN));
     for ($i = 0; $i < $n; $i++) {
         $input = explode(' ', trim(fgets(STDIN)));
 
         if (count($input) === 2) {
-            $arr[] = new $objStr(trim($input[0]), trim($input[1]));
+            $model = trim($input[0]);
+            $arr[] = new $objStr($model, trim($input[1]));
+            continue;
         }
 
         if (count($input) === 3) {
+            $model = trim($input[0]);
             if (is_numeric($input[2])){
-                $arr[] = new $objStr(trim($input[0]), trim($input[1]), trim($input[2]));
+                $arr[] = new $objStr($model, trim($input[1]), trim($input[2]));
                 continue;
             }
-            $arr[] = new $objStr(trim($input[0]), trim($input[1]), 'n/a', trim($input[2]));
+            $arr[] = new $objStr($model, trim($input[1]), 'n/a', trim($input[2]));
+            continue;
         }
 
         if (count($input) === 4) {
-            $arr[] = new $objStr(trim($input[0]), trim($input[1]), trim($input[2]), trim($input[3]));
+            $model = trim($input[0]);
+            $arr[] = new $objStr($model, trim($input[1]), trim($input[2]), trim($input[3]));
         }
     }
     return $arr;

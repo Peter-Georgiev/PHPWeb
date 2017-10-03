@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 class Car
 {
-    //model, engine, weight and color.
     private $model;
     private $engine;
     private $weight; //optional

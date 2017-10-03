@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 class Engine
 {
-    //model, power, displacement and efficiency.
     private $model;
     private $power;
     private $displacment; //optional
