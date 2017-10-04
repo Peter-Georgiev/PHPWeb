@@ -18,4 +18,9 @@ class Vehicle
         }
         return "Property doesn't not exist.";
     }
+
+    protected function setColor($color)
+    {
+        $this->color = $color;
+    }
 }

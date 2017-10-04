@@ -15,4 +15,9 @@ class Car extends Vehicle
         $this->year = $year;
         $this->brand = $brand;
     }
+
+    public function paint($paint_color)
+    {
+        parent::setColor($paint_color);
+    }
 }

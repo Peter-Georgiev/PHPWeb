@@ -130,6 +130,7 @@ foreach ($cars as $car) {
         }
     }
 }
+
 function readEngineAndCar(array &$arr, string $objStr): array {
     $n = intval(trim(fgets(STDIN)));
     for ($i = 0; $i < $n; $i++) {

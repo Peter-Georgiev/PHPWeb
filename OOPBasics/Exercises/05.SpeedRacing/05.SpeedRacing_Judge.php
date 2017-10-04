@@ -73,7 +73,7 @@ function calculateCommand(array &$cars) {
     while ('End' != $input = trim(fgets(STDIN))) {
         $tokens = explode(' ', $input);
 
-        $drive = $tokens[0];
+        $drive = trim($tokens[0]);
         if ($drive != 'Drive') {
             continue;
         }
@@ -84,7 +84,9 @@ function calculateCommand(array &$cars) {
         }
 
         $distanceTraveled = floatval($tokens[2]);
-        if ($cars[$models]->getFuelAmount() < $distanceTraveled * $cars[$models]->getFuelCostFor1km()) {
+
+        if (round($cars[$models]->getFuelAmount(), 2) <
+            round($distanceTraveled * $cars[$models]->getFuelCostFor1km(), 2)) {
             echo 'Insufficient fuel for the drive' .PHP_EOL;
             continue;
         }
@@ -100,7 +102,7 @@ function printResult(array $cars) {
     $index = count($cars);
     foreach ($cars as $car) {
         echo $car->getModel() . ' ' .
-            number_format($car->getFuelAmount(), 2) . ' ' .
+            number_format(abs($car->getFuelAmount()), 2) . ' ' .
             $car->getDistanceTraveled();
 
         if ($index > 1) {

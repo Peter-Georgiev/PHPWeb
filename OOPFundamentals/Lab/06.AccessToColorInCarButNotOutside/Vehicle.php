@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 class Vehicle
 {
-    private $color;
+    protected $color;
     private $numberDoors;
 
     public function __construct($color, $numberDoors)
@@ -17,5 +17,10 @@ class Vehicle
             return $this->{$name};
         }
         return "Property doesn't not exist.";
+    }
+
+    protected function setColor($color)
+    {
+        $this->color = $color;
     }
 }
