@@ -6,58 +6,56 @@ class Car
     private $speed;
     private $fuel;
     private $fuelEconomy;
-    private $traveledDistance;
-    private $distancePassed;
-
+    private $distanceTraveled = 0.0;
+    private $timeTraveled = 0.0;
+    private $minutesPerKm = 0.0;
+    private $fuelPerKm = 0.0;
+	
     public function __construct(float $speed, float $fuel, float $fuelEconomy)
     {
         $this->speed = $speed;
         $this->fuel = $fuel;
         $this->fuelEconomy = $fuelEconomy;
-        $this->distancePassed = 0;
+        $this->minutesPerKm = 60 / $this->speed;
+        $this->fuelPerKm = $this->fuelEconomy / 100;
     }
-
-    public function setTravel(float $distanceToTravel)
+	
+    public function travel(float $distance)
     {
-        $fuelPerKM = $this->fuelEconomy / 100;
-
-        $fuelNeeded = $distanceToTravel * $fuelPerKM;
-
-        if ($fuelNeeded > $this->fuel) {
-            $kilometersPerLiter = 100 / $this->fuelEconomy;
-
-            $this->distancePassed += $this->fuel * $kilometersPerLiter;
-            $this->fuel = 0;
+        $requiredFuel = $this->fuelPerKm * $distance;
+        if ($requiredFuel <= $this->fuel) {
+            $this->fuel -= $requiredFuel;
+            $this->distanceTraveled += $distance;
+            $this->timeTraveled += $distance * $this->minutesPerKm;
         } else {
-            $this->fuel -= $fuelNeeded;
-            $this->distancePassed += $distanceToTravel;
+            $possibleDistance = $this->fuel / $this->fuelPerKm;
+            $this->distanceTraveled += $possibleDistance;
+            $this->fuel = 0;
+            $this->timeTraveled += $possibleDistance * $this->minutesPerKm;
         }
     }
-
-    public function setRefuel(float $refuelAmount)
+	
+    public function reFuel(float $fuel)
     {
-        $this->fuel += $refuelAmount;
+        $this->fuel += $fuel;
     }
-
-    public function GetTotalDistance()
+	
+    public function printDistance()
     {
-        return number_format($this->distancePassed, 1);
+        $formatted = number_format(round($this->distanceTraveled, 1), 1);
+        echo "Total Distance: {$formatted}" . PHP_EOL;
     }
-
-    public function getHours()
+	
+    public function printTime()
     {
-        return (int)$this->traveledDistance / (int)$this->speed;
+        $hours = floor($this->timeTraveled / 60);
+        $minutes = floor($this->timeTraveled % 60);
+        echo "Total Time: {$hours} hours and {$minutes} minutes" . PHP_EOL;
     }
-
-    public function getMinutes()
+	
+    public function printFuel()
     {
-        return (int)$this->traveledDistance % (int)$this->speed;
-    }
-
-    public function getRemFuel()
-    {
-        $remFuel = $this->fuel - $this->fuelEconomy *
-            ($this->traveledDistance / $this->speed);
-        return number_format($remFuel, 1);
+        $formatted = number_format(round($this->fuel, 1), 1);
+        echo "Fuel left: {$formatted} liters" . PHP_EOL;
     }
 }
