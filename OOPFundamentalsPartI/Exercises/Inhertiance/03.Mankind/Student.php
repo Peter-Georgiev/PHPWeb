@@ -22,8 +22,7 @@ class Student extends Human
 
     public function __toString()
     {
-        return "First Name: " . parent::getFirstName() . PHP_EOL .
-            "Last Name: " . parent::getLastName() . PHP_EOL .
+        return parent::__toString() .
             "Faculty number: " . $this->facultyNumber . PHP_EOL;
     }
 }

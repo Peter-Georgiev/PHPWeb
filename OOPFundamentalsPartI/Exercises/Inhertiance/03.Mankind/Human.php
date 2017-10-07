@@ -4,7 +4,7 @@ declare(strict_types=1);
 class Human
 {
     private $firstName;
-    protected $lastName;
+    private $lastName;
 
     protected function setFirstName(string $firstName)
     {
@@ -21,7 +21,7 @@ class Human
     protected function setLastName(string $lastName)
     {
         if (!ctype_upper($lastName[0])) {
-            exit("Expected upper case letter!Argument: lastName");
+            exit("Expected upper case letter!Argument: $lastName");
         }
 
         if (strlen($lastName) < 3) {
@@ -30,13 +30,9 @@ class Human
         $this->lastName = $lastName;
     }
 
-    protected function getFirstName()
+    public function __toString()
     {
-        return $this->firstName;
-    }
-
-    protected function getLastName()
-    {
-        return $this->lastName;
+        return 'First Name: ' . $this->firstName . PHP_EOL .
+            'Last Name: ' . $this->lastName . PHP_EOL;
     }
 }
