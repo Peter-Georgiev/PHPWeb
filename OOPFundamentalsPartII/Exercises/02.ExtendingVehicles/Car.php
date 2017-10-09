@@ -1,39 +1,24 @@
 <?php
 declare(strict_types=1);
 
-class Car extends Vehicles
+class Car extends Vehicle
 {
-    public function __construct(float $fuelQuantity, float $litersPerKM, float $tankCapacity)
+    public function __construct(float $fuelQuantity, float $fuelConsumption, float $tankCapacity)
     {
-        parent::__construct($fuelQuantity, $litersPerKM, $tankCapacity);
-    }
-
-    protected function setLitersPerKM(float $litersPerKM)
-    {
-        parent::setLitersPerKM($litersPerKM + 0.9);
-    }
-
-    public function refuel(float $fuelQuantity)
-    {
-        if (parent::getFuelQuantity() + $fuelQuantity > parent::getTankCapacity()) {
-            echo("Cannot fit fuel in tank") . PHP_EOL;
-        } else {
-            parent::setFuelQuantity(parent::getFuelQuantity() + $fuelQuantity);
+        if ($fuelQuantity < 0) {
+            $fuelQuantity = 0;
         }
+        if ($fuelQuantity > $tankCapacity) {
+            echo "Cannot fit fuel in tank" . PHP_EOL;
+            $fuelQuantity = 0;
+            $tankCapacity = 0;
+        }
+
+        parent::__construct($fuelQuantity, $fuelConsumption, $tankCapacity);
     }
 
-    public function drive(float $distance)
+    public function setFuelConsumption(float $fuelConsumption)
     {
-        parent::vehicleDrive('Car', $distance);
-    }
-
-    public function getMessage()
-    {
-        return parent::getMessage();
-    }
-
-    public function getFuelQuantity()
-    {
-        return number_format(parent::getFuelQuantity(), 2 ,'.', '');
+        $this->fuelConsumption = $fuelConsumption + 0.9;
     }
 }

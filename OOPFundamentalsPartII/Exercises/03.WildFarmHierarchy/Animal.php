@@ -3,57 +3,31 @@ declare(strict_types=1);
 
 abstract class Animal
 {
-    private $animalName;
-    private $animalType;
-    private $animalWeight;
-    private $foodEaten;
+    protected $name;
+    protected $type;
+    protected $weight;
+    protected $foodEaten = 0;
+    protected $sound;
 
-    public function __construct(string $animalName, string $animalType, float $animalWeight, int $foodEaten)
+    public function __construct(string $name, string $type, float $weight)
     {
-        $this->setAnimalName($animalName);
-        $this->setAnimalType($animalType);
-        $this->setAnimalWeight($animalWeight);
-        $this->setFoodEaten($foodEaten);
-        
-    }
-    
-    private function setAnimalName(string $animalName)
-    {
-        $this->animalName = $animalName;
-    }
-    
-    private function setAnimalType(string $animalType)
-    {
-        $this->animalType = $animalType;
-    }
-    
-    private function setAnimalWeight(float $animalWeight)
-    {
-        $this->animalWeight = $animalWeight;
-    }
-    
-    private function setFoodEaten(int $foodEaten)
-    {
-        $this->foodEaten = $foodEaten;
+        $this->name = $name;
+        $this->type = $type;
+        $this->weight = $weight;
     }
 
     public function makeSound()
     {
-        echo "animal sound";
+        return $this->sound;
     }
 
-    public function eatFood(Food $food)
+    public function eat(Food $food, $foodType)
     {
-        if ($this->animalType) {
-            //todo
-        }
-        $this->foodEaten = $food;
+        $this->foodEaten += $food->getQuantity();
     }
 
-    public function __toString()
+    function __toString()
     {
-        return $this->animalType . '[' . $this->animalType .
-        $this->catBreed . $this->animalWeight .
-            $this->animalLivingRegion . $this->foodEaten;
+        return basename(get_class($this));
     }
 }

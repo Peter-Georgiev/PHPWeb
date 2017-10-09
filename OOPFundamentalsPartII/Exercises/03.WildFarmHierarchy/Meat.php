@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Peter
- * Date: 06.10.2017
- * Time: 18:38 ч.
- */
+declare(strict_types=1);
 
 class Meat extends Food
 {
-
 }

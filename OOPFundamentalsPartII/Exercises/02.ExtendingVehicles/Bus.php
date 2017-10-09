@@ -1,49 +1,31 @@
 <?php
 declare(strict_types=1);
 
-class Bus extends Vehicles
+class Bus extends Vehicle
 {
-    public function __construct(float $fuelQuantity, float $litersPerKM, float $tankCapacity)
+    public function __construct(float $fuelQuantity, float $fuelConsumption, float $tankCapacity)
     {
-        parent::__construct($fuelQuantity, $litersPerKM, $tankCapacity);
-    }
-
-    protected function setLitersPerKM(float $litersPerKM)
-    {
-        if (parent::isDriveEmpty()) {
-            parent::setDriveEmpty(false);
-            parent::setLitersPerKM($litersPerKM);
-        } else {
-            parent::setLitersPerKM($litersPerKM + 1.4);
+        if ($fuelQuantity < 0) {
+            $fuelQuantity = 0;
         }
-    }
-
-    public function refuel(float $fuelQuantity)
-    {
-        if (parent::getFuelQuantity() + $fuelQuantity > parent::getTankCapacity()) {
-            echo("Cannot fit fuel in tank") . PHP_EOL;
-        } else {
-            parent::setFuelQuantity(parent::getFuelQuantity() + $fuelQuantity);
+        if ($fuelQuantity > $tankCapacity) {
+            echo "Cannot fit fuel in tank" . PHP_EOL;
+            $fuelQuantity = 0;
+            $tankCapacity = 0;
         }
+
+        parent::__construct($fuelQuantity, $fuelConsumption, $tankCapacity);
     }
 
-    public function driveEmpty()
+    public function drive(float $distance, bool $empty = false): string
     {
-        parent::setDriveEmpty(true);
-    }
-
-    public function drive(float $distance)
-    {
-        parent::vehicleDrive('Bus', $distance);
-    }
-
-    public function getMessage()
-    {
-        return parent::getMessage();
-    }
-
-    public function getFuelQuantity()
-    {
-        return number_format(parent::getFuelQuantity(), 2 ,'.', '');
+        if ($empty == false) {
+            $this->fuelConsumption += 1.4;
+            $res = parent::drive($distance);
+            $this->fuelConsumption -= 1.4;
+            return $res;
+        } else {
+            return parent::drive($distance);
+        }
     }
 }

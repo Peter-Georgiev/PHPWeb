@@ -1,83 +1,69 @@
 <?php
 declare(strict_types=1);
 
-abstract class Vehicles
+abstract class Vehicle
 {
-    private $fuelQuantity;
-    private $litersPerKM;
-    private $tankCapacity;
-    private $message = '';
-    private $driveEmpty = false;
+    protected $fuelQuantity;
+    protected $fuelConsumption;
+    protected $tankCapacity;
 
-    protected function __construct(float $fuelQuantity, float $litersPerKM, float $tankCapacity)
+    public function __construct(float $fuelQuantity, float $fuelConsumption, float $tankCapacity)
     {
+        if ($fuelQuantity < 0) {
+            $fuelQuantity = 0;
+        }
+
         $this->setFuelQuantity($fuelQuantity);
-        $this->setLitersPerKM($litersPerKM);
+        $this->setFuelConsumption($fuelConsumption);
         $this->setTankCapacity($tankCapacity);
     }
 
-    protected function setFuelQuantity(float $fuelQuantity)
+    public function drive(float $distance): string
     {
-        if ($fuelQuantity <= 0) {
-            echo "Fuel must be a positive number" . PHP_EOL;
+        $driveee = $this->fuelConsumption * $distance;
+        $this->fuelQuantity -= $driveee;
+        if ($this->fuelQuantity > 0) {
+            return "{$this->getClassName()} travelled {$distance} km";
         } else {
-            $this->fuelQuantity = $fuelQuantity;
+            $this->fuelQuantity += $driveee;
+            return "{$this->getClassName()} needs refueling";
         }
     }
 
-    protected function setLitersPerKM(float $litersPerKM)
+    public function refuel(float $amount)
     {
-        $this->litersPerKM = $litersPerKM;
+        if ($amount > $this->tankCapacity - $this->fuelQuantity) {
+            throw new \Exception("Cannot fit fuel in tank");
+        } else {
+            return $this->fuelQuantity += $amount;
+        }
     }
 
-    protected function setTankCapacity(float $tankCapacity)
+    public function setFuelQuantity(float $fuelQuantity)
     {
+        $this->fuelQuantity = $fuelQuantity;
+    }
+
+    protected function setFuelConsumption(float $fuelConsumption)
+    {
+        return $this->fuelConsumption = $fuelConsumption;
+    }
+
+    public function setTankCapacity($tankCapacity)
+    {
+        if ($tankCapacity < 0) {
+            throw new \Exception("Fuel must be a positive number");
+        }
         $this->tankCapacity = $tankCapacity;
     }
 
-    protected function setMessage($message)
+    private function getClassName(): string
     {
-        $this->message = $message;
+        return basename(get_class($this));
     }
 
-    protected function setDriveEmpty(bool $driveEmpty)
-    {
-        $this->driveEmpty = $driveEmpty;
-    }
-
-    protected function vehicleDrive(string $vehicle, float $distance)
-    {
-        $needFuel = $this->getLitersPerKM() * $distance;
-        if ($needFuel < $this->getFuelQuantity()) {
-            $this->setFuelQuantity($this->getFuelQuantity() - $needFuel);
-            echo "$vehicle travelled {$distance} km" . PHP_EOL;
-        } else {
-            echo "$vehicle needs refueling" . PHP_EOL;
-        }
-    }
-
-    protected function getFuelQuantity()
+    public function getFuel()
     {
         return $this->fuelQuantity;
-    }
-
-    protected function getLitersPerKM()
-    {
-        return $this->litersPerKM;
-    }
-
-    protected function getMessage()
-    {
-        return $this->message;
-    }
-
-    protected function getTankCapacity()
-    {
-        return $this->tankCapacity;
-    }
-
-    protected function isDriveEmpty(): bool
-    {
-        return $this->driveEmpty;
     }
 }

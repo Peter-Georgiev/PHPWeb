@@ -1,22 +1,21 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Peter
- * Date: 06.10.2017
- * Time: 18:43 ч.
- */
+declare(strict_types=1);
 
-class Tiger extends Felime
+class Tiger extends Feline
 {
-    public function makeSound()
+    const SOUND = "ROAAR!!!";
+
+    public function __construct(string $name, string $type, float $weight, string $livingRegion)
     {
-        echo "ROAAR!" . PHP_EOL;
+        $this->sound = self::SOUND;
+        parent::__construct($name, $type, $weight, $livingRegion);
     }
 
-    public function eatFood(Food $food, string $alabala)
+    public function eat(Food $food, $footType)
     {
-        $this->makeSound();
-
+        if ($footType != "Meat") {
+            throw new \Exception(basename(get_class($this)) . "s are not eating that type of food!");
+        }
+        parent::eat($food, $footType);
     }
-
 }

@@ -1,50 +1,46 @@
 <?php
 declare(strict_types=1);
-require "Animal.php";
-require "Food.php";
-require "Mammal.php";
-require "Vegetable.php";
-require "Meat.php";
-require "Mouse.php";
-require "Felime.php";
-require "Zebra.php";
-require "Cat.php";
-require "Tiger.php";
+spl_autoload_register(function ($class) {
+    $class = str_replace('\\', '/', $class);
+    $class = $class . ".php";
 
-$row = 1;
-while ('End' != $command = trim(fgets(STDIN))) {
-    $row++;
-    if ($row % 2 == 0) {
-        $animalInfo = explode(' ', $command);
-        $animlType = $animalInfo[0];
-        $animalName = $animalInfo[1];
-        $animalWeght = $animalInfo[2];
-        $animalLivingRegion = $animalInfo[3];
-        $catBreed = null;
+    require_once $class;
+});
 
-        if ($animlType == 'Cat') {
-            $catBreed = $animalInfo[4];
-        }
+while ('End' != $input = trim(fgets(STDIN))) {
 
-        if ($animlType == 'Cat') {
-            $animal = new Cat($animlType, $animalName, $animalWeght, $animalLivingRegion, $catBreed);
-        } elseif ($animlType == 'Mouse') {
-            $animal = new Mouse($animlType, $animalName, $animalWeght, $animalLivingRegion);
-        } elseif ($animlType == 'Zebra') {
-            $animal = new Zebra($animlType, $animalName, $animalWeght, $animalLivingRegion);
-        } elseif ($animlType == 'Tiger') {
-            $animal = new Tire($animlType, $animalName, $animalWeght, $animalLivingRegion);
-        } else {
-            $foodInfo = explode(' ', $command);
-            $foodType = $foodInfo[0];
-            $foodQuantity = $foodInfo[1];
+    $animal = null;
 
-            if ($foodInfo == 'Vagetable') {
-                $food = new Vegetable(intval( $foodQuantity));
-            }
-        }
+    list($animalType, $animalName, $animalWeight, $animalLivingRegion) =
+        explode(" ", $input);
 
-
+    if (count($input) == 5 && $animalType == "Cat") {
+        $catBread = $input[4];
+        $animal = new Cat($animalName, $animalType, floatval($animalWeight), $animalLivingRegion, $catBread);
+    } else if (count($input) == 4 && $animalType == "Tiger") {
+        $animal = new Tiger($animalName, $animalType, floatval($animalWeight), $animalLivingRegion);
+    } else if (count($input) == 4 && $animalType == "Zebra") {
+        $animal = new Zebra($animalName, $animalType, floatval($animalWeight), $animalLivingRegion);
+    } else if (count($input) == 4 && $animalType == "Mouse") {
+        $animal = new Mouse($animalName, $animalType, floatval($animalWeight), $animalLivingRegion);
     }
 
+    $food = null;
+    list($foodType, $foodQuantity) = explode(" ", trim(fgets(STDIN)));
+
+    if ($foodType == "Meat") {
+        $food = new Meat(floatval($foodQuantity), $foodType);
+    } else if ($foodType == "Vegetable") {
+        $food = new Vegatable(floatval($foodQuantity), $foodType);
+    }
+
+    echo $animal->makeSound() . PHP_EOL;
+
+    try {
+        $animal->eat($food, $foodType);
+    } catch (\Exception $e) {
+        echo $e->getMessage() . PHP_EOL;
+    }
+
+    echo $animal.PHP_EOL;
 }

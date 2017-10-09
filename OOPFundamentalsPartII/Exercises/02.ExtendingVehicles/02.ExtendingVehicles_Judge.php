@@ -1,240 +1,175 @@
 <?php
 declare(strict_types=1);
 
-abstract class Vehicles
+abstract class Vehicle
 {
-    private $fuelQuantity;
-    private $litersPerKM;
-    private $tankCapacity;
-    private $message = '';
-    private $driveEmpty = false;
+    protected $fuelQuantity;
+    protected $fuelConsumption;
+    protected $tankCapacity;
 
-    protected function __construct(float $fuelQuantity, float $litersPerKM, float $tankCapacity)
+    public function __construct(float $fuelQuantity, float $fuelConsumption, float $tankCapacity)
     {
+        if ($fuelQuantity < 0) {
+            $fuelQuantity = 0;
+        }
+
         $this->setFuelQuantity($fuelQuantity);
-        $this->setLitersPerKM($litersPerKM);
+        $this->setFuelConsumption($fuelConsumption);
         $this->setTankCapacity($tankCapacity);
     }
 
-    protected function setFuelQuantity(float $fuelQuantity)
+    public function drive(float $distance): string
     {
-        if ($fuelQuantity <= 0) {
-            echo "Fuel must be a positive number" . PHP_EOL;
+        $driveee = $this->fuelConsumption * $distance;
+        $this->fuelQuantity -= $driveee;
+        if ($this->fuelQuantity > 0) {
+            return "{$this->getClassName()} travelled {$distance} km";
         } else {
-            $this->fuelQuantity = $fuelQuantity;
+            $this->fuelQuantity += $driveee;
+            return "{$this->getClassName()} needs refueling";
         }
     }
 
-    protected function setLitersPerKM(float $litersPerKM)
+    public function refuel(float $amount)
     {
-        $this->litersPerKM = $litersPerKM;
+        if ($amount > $this->tankCapacity - $this->fuelQuantity) {
+            throw new \Exception("Cannot fit fuel in tank");
+        } else {
+            return $this->fuelQuantity += $amount;
+        }
     }
 
-    protected function setTankCapacity(float $tankCapacity)
+    public function setFuelQuantity(float $fuelQuantity)
     {
+        $this->fuelQuantity = $fuelQuantity;
+    }
+
+    protected function setFuelConsumption(float $fuelConsumption)
+    {
+        return $this->fuelConsumption = $fuelConsumption;
+    }
+
+    public function setTankCapacity($tankCapacity)
+    {
+        if ($tankCapacity < 0) {
+            throw new \Exception("Fuel must be a positive number");
+        }
         $this->tankCapacity = $tankCapacity;
     }
 
-    protected function setMessage($message)
+    private function getClassName(): string
     {
-        $this->message = $message;
+        return basename(get_class($this));
     }
 
-    protected function setDriveEmpty(bool $driveEmpty)
-    {
-        $this->driveEmpty = $driveEmpty;
-    }
-
-    protected function vehicleDrive(string $vehicle, float $distance)
-    {
-        $needFuel = $this->getLitersPerKM() * $distance;
-        if ($needFuel < $this->getFuelQuantity()) {
-            $this->setFuelQuantity($this->getFuelQuantity() - $needFuel);
-            echo "$vehicle travelled {$distance} km" . PHP_EOL;
-        } else {
-            echo "$vehicle needs refueling" . PHP_EOL;
-        }
-    }
-
-    protected function getFuelQuantity()
+    public function getFuel()
     {
         return $this->fuelQuantity;
     }
+}
 
-    protected function getLitersPerKM()
+class Car extends Vehicle
+{
+    public function __construct(float $fuelQuantity, float $fuelConsumption, float $tankCapacity)
     {
-        return $this->litersPerKM;
+        if ($fuelQuantity < 0) {
+            $fuelQuantity = 0;
+        }
+        if ($fuelQuantity > $tankCapacity) {
+            echo "Cannot fit fuel in tank" . PHP_EOL;
+            $fuelQuantity = 0;
+            $tankCapacity = 0;
+        }
+
+        parent::__construct($fuelQuantity, $fuelConsumption, $tankCapacity);
     }
 
-    protected function getMessage()
+    public function setFuelConsumption(float $fuelConsumption)
     {
-        return $this->message;
-    }
-
-    protected function getTankCapacity()
-    {
-        return $this->tankCapacity;
-    }
-
-    protected function isDriveEmpty(): bool
-    {
-        return $this->driveEmpty;
+        $this->fuelConsumption = $fuelConsumption + 0.9;
     }
 }
 
-class Car extends Vehicles
+class Truck extends Vehicle
 {
-    public function __construct(float $fuelQuantity, float $litersPerKM, float $tankCapacity)
+    public function setFuelConsumption(float $fuelConsumption)
     {
-        parent::__construct($fuelQuantity, $litersPerKM, $tankCapacity);
+        $this->fuelConsumption = $fuelConsumption + 1.6;
     }
 
-    protected function setLitersPerKM(float $litersPerKM)
+    public function refuel(float $amount): float
     {
-        parent::setLitersPerKM($litersPerKM + 0.9);
+        return $this->fuelQuantity += $amount * 0.95;
+    }
+}
+
+class Bus extends Vehicle
+{
+    public function __construct(float $fuelQuantity, float $fuelConsumption, float $tankCapacity)
+    {
+        if ($fuelQuantity < 0) {
+            $fuelQuantity = 0;
+        }
+        if ($fuelQuantity > $tankCapacity) {
+            echo "Cannot fit fuel in tank" . PHP_EOL;
+            $fuelQuantity = 0;
+            $tankCapacity = 0;
+        }
+
+        parent::__construct($fuelQuantity, $fuelConsumption, $tankCapacity);
     }
 
-    public function refuel(float $fuelQuantity)
+    public function drive(float $distance, bool $empty = false): string
     {
-        if (parent::getFuelQuantity() + $fuelQuantity > parent::getTankCapacity()) {
-            echo("Cannot fit fuel in tank") . PHP_EOL;
+        if ($empty == false) {
+            $this->fuelConsumption += 1.4;
+            $res = parent::drive($distance);
+            $this->fuelConsumption -= 1.4;
+            return $res;
         } else {
-            parent::setFuelQuantity(parent::getFuelQuantity() + $fuelQuantity);
+            return parent::drive($distance);
         }
     }
-
-    public function drive(float $distance)
-    {
-        parent::vehicleDrive('Car', $distance);
-    }
-
-    public function getMessage()
-    {
-        return parent::getMessage();
-    }
-
-    public function getFuelQuantity()
-    {
-        return number_format(parent::getFuelQuantity(), 2 ,'.', '');
-    }
 }
 
-class Truck extends Vehicles
-{
-    public function __construct(float $fuelQuantity, float $litersPerKM, float $tankCapacity)
-    {
-        parent::__construct($fuelQuantity, $litersPerKM, $tankCapacity);
-    }
-
-    protected function setLitersPerKM(float $litersPerKM)
-    {
-        parent::setLitersPerKM($litersPerKM + 1.6);
-    }
-
-    public function refuel(float $fuelQuantity)
-    {
-        parent::setFuelQuantity(parent::getFuelQuantity() + ($fuelQuantity * 0.95));
-    }
-
-    public function drive(float $distance)
-    {
-        parent::vehicleDrive('Truck', $distance);
-    }
-
-    public function getMessage()
-    {
-        return parent::getMessage();
-    }
-
-    public function getFuelQuantity()
-    {
-        return number_format(parent::getFuelQuantity(), 2 ,'.', '');
-    }
-}
-
-class Bus extends Vehicles
-{
-    public function __construct(float $fuelQuantity, float $litersPerKM, float $tankCapacity)
-    {
-        parent::__construct($fuelQuantity, $litersPerKM, $tankCapacity);
-    }
-
-    protected function setLitersPerKM(float $litersPerKM)
-    {
-        if (parent::isDriveEmpty()) {
-            parent::setDriveEmpty(false);
-            parent::setLitersPerKM($litersPerKM);
-        } else {
-            parent::setLitersPerKM($litersPerKM + 1.4);
-        }
-    }
-
-    public function refuel(float $fuelQuantity)
-    {
-        if (parent::getFuelQuantity() + $fuelQuantity > parent::getTankCapacity()) {
-            echo("Cannot fit fuel in tank") . PHP_EOL;
-        } else {
-            parent::setFuelQuantity(parent::getFuelQuantity() + $fuelQuantity);
-        }
-    }
-
-    public function driveEmpty()
-    {
-        parent::setDriveEmpty(true);
-    }
-
-    public function drive(float $distance)
-    {
-        parent::vehicleDrive('Bus', $distance);
-    }
-
-    public function getMessage()
-    {
-        return parent::getMessage();
-    }
-
-    public function getFuelQuantity()
-    {
-        return number_format(parent::getFuelQuantity(), 2 ,'.', '');
-    }
-}
-
-
-list($vehicle, $fuel, $liters, $tankCapacity) = explode(' ', trim(fgets(STDIN)));
+list($vehicle, $fuel, $liters, $tankCapacity) = explode(" ", trim(fgets(STDIN)));
 $car = new Car(floatval($fuel), floatval($liters), floatval($tankCapacity));
 
-list($vehicle, $fuel, $liters, $tankCapacity) = explode(' ', trim(fgets(STDIN)));
+list($vehicle, $fuel, $liters, $tankCapacity) = explode(" ", trim(fgets(STDIN)));
 $truck = new Truck(floatval($fuel), floatval($liters), floatval($tankCapacity));
 
-list($vehicle, $fuel, $liters, $tankCapacity) = explode(' ', trim(fgets(STDIN)));
+list($vehicle, $fuel, $liters, $tankCapacity) = explode(" ", trim(fgets(STDIN)));
 $bus = new Bus(floatval($fuel), floatval($liters), floatval($tankCapacity));
 
 $n = intval(fgets(STDIN));
 while ($n--) {
-    list($command, $vehicle, $km) = explode(' ', trim(fgets(STDIN)));
+    try {
+        list($command, $vehicle, $liters) = explode(' ', trim(fgets(STDIN)));
 
-    if ($command == 'Drive') {
-        if ($vehicle == 'Car') {
-            $car->drive(floatval($km));
-        } elseif ($vehicle == 'Truck') {
-            $truck->drive(floatval($km));
-        } elseif ($vehicle == 'Bus') {
-            $bus->drive(floatval($km));
+        if ($command == 'Drive') {
+            if ($vehicle == 'Car') {
+                echo $car->drive(floatval($liters)) . PHP_EOL;
+            } elseif ($vehicle == 'Truck') {
+                echo $truck->drive(floatval($liters)) . PHP_EOL;;
+            } elseif ($vehicle == 'Bus') {
+                echo $bus->drive(floatval($liters)) . PHP_EOL;
+            }
+        } elseif ($command == 'Refuel') {
+            if ($vehicle == 'Car') {
+                $car->refuel(floatval($liters));
+            } elseif ($vehicle == 'Truck') {
+                $truck->refuel(floatval($liters));
+            } elseif ($vehicle == 'Bus') {
+                $bus->refuel(floatval($liters));
+            }
+        } elseif ($command == 'DriveEmpty' && $vehicle == 'Bus') {
+            echo $bus->drive(floatval($liters), true) . PHP_EOL;
         }
-    } elseif ($command == 'Refuel') {
-        if ($vehicle == 'Car') {
-            $car->refuel(floatval($km));
-        } elseif ($vehicle == 'Truck') {
-            $truck->refuel(floatval($km));
-        } elseif ($vehicle == 'Bus') {
-            $bus->refuel(floatval($km));
-        }
-    } elseif ($command == 'DriveEmpty' && $vehicle == 'Bus') {
-        $bus->driveEmpty();
-        $bus->drive(floatval($km));
+    } catch (\Exception $e) {
+        echo ($e->getMessage()) . PHP_EOL;
     }
 }
 
-echo "Car: {$car->getFuelQuantity()}" . PHP_EOL;
-echo "Truck: {$truck->getFuelQuantity()}" . PHP_EOL;
-echo "Bus: {$bus->getFuelQuantity()}";
+echo "Car: " . number_format($car->getFuel(), 2, '.', '') . PHP_EOL;
+echo "Truck: " . number_format($truck->getFuel(), 2, '.', '') . PHP_EOL;
+echo "Bus: " . number_format($bus->getFuel(), 2, '.', '');

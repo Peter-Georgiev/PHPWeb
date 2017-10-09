@@ -1,22 +1,16 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Peter
- * Date: 06.10.2017
- * Time: 18:39 ч.
- */
+declare(strict_types=1);
 
-class Mammal extends Animal
+abstract class Mammal extends Animal
 {
-    private $livingRegion;
-
-    public function __construct(string $animalName, string $animalType,
-                                float $animalWeight, string $livingRegion)
+    protected $region;
+    public function __construct(string $name, string $type, float $weight, string $livingRegion)
     {
-        $this->setName($animalName);
-        $this->setType($animalType);
-        $this->setWeight();
-
+        $this->region = $livingRegion;
+        parent::__construct($name, $type, $weight);
     }
-
+    function __toString()
+    {
+        return parent::__toString() . "[{$this->name}, {$this->weight}, {$this->region}, {$this->foodEaten}]";
+    }
 }

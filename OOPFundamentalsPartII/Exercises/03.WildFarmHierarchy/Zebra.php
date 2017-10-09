@@ -1,15 +1,21 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Peter
- * Date: 06.10.2017
- * Time: 18:41 ч.
- */
+declare(strict_types=1);
 
 class Zebra extends Mammal
 {
-    public function makeSound()
+    const SOUND = "Zs";
+
+    public function __construct(string $name, string $type, float $weight, string $livingRegion)
     {
-        echo "Zs";
+        $this->sound = self::SOUND;
+        parent::__construct($name, $type, $weight, $livingRegion);
+    }
+
+    public function eat(Food $food, $footType)
+    {
+        if ($footType != "Vegetable") {
+            throw new \Exception(basename(get_class($this)) . "s are not eating that type of food!");
+        }
+        parent::eat($food, $footType);
     }
 }

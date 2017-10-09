@@ -1,35 +1,15 @@
 <?php
 declare(strict_types=1);
 
-class Truck extends Vehicles
+class Truck extends Vehicle
 {
-    public function __construct(float $fuelQuantity, float $litersPerKM, float $tankCapacity)
+    public function setFuelConsumption(float $fuelConsumption)
     {
-        parent::__construct($fuelQuantity, $litersPerKM, $tankCapacity);
+        $this->fuelConsumption = $fuelConsumption + 1.6;
     }
 
-    protected function setLitersPerKM(float $litersPerKM)
+    public function refuel(float $amount): float
     {
-        parent::setLitersPerKM($litersPerKM + 1.6);
-    }
-
-    public function refuel(float $fuelQuantity)
-    {
-        parent::setFuelQuantity(parent::getFuelQuantity() + ($fuelQuantity * 0.95));
-    }
-
-    public function drive(float $distance)
-    {
-        parent::vehicleDrive('Truck', $distance);
-    }
-
-    public function getMessage()
-    {
-        return parent::getMessage();
-    }
-
-    public function getFuelQuantity()
-    {
-        return number_format(parent::getFuelQuantity(), 2 ,'.', '');
+        return $this->fuelQuantity += $amount * 0.95;
     }
 }
