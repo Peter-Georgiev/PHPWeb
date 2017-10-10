@@ -144,10 +144,15 @@ while ('End' != $input = trim(fgets(STDIN))) {
 
     $animal = null;
 
-    list($animalType, $animalName, $animalWeight, $animalLivingRegion, $catBread) =
-        explode(' ', $input);
+    $input = explode(" ", $input);
+
+    $animalType = $input[0];
+    $animalName = $input[1];
+    $animalWeight = floatval($input[2]);
+    $animalLivingRegion = $input[3];
 
     if (count($input) == 5 && $animalType == "Cat") {
+        $catBread = $input[4];
         $animal = new Cat($animalName, $animalType, floatval($animalWeight), $animalLivingRegion, $catBread);
     } else if (count($input) == 4 && $animalType == "Tiger") {
         $animal = new Tiger($animalName, $animalType, floatval($animalWeight), $animalLivingRegion);
@@ -158,6 +163,7 @@ while ('End' != $input = trim(fgets(STDIN))) {
     }
 
     $food = null;
+
     $odd = explode(' ', trim(fgets(STDIN)));
     $foodType = $odd [0];
     $foodQuantity = floatval($odd [1]);
@@ -167,11 +173,14 @@ while ('End' != $input = trim(fgets(STDIN))) {
     } else if ($foodType == "Vegetable") {
         $food = new Vegatable($foodQuantity, $foodType);
     }
+
     echo $animal->makeSound() . PHP_EOL;
+
     try {
         $animal->eat($food, $foodType);
     } catch (\Exception $e) {
         echo $e->getMessage() . PHP_EOL;
     }
+
     echo $animal.PHP_EOL;
 }

@@ -3,5 +3,5 @@ declare(strict_types=1);
 
 interface Area
 {
-    public function getSurface();
+    public function getSurface(): string;
 }

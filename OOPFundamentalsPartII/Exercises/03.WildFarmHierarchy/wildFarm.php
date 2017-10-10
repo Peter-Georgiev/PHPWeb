@@ -1,9 +1,7 @@
 <?php
 declare(strict_types=1);
 spl_autoload_register(function ($class) {
-    $class = str_replace('\\', '/', $class);
     $class = $class . ".php";
-
     require_once $class;
 });
 
@@ -11,8 +9,12 @@ while ('End' != $input = trim(fgets(STDIN))) {
 
     $animal = null;
 
-    list($animalType, $animalName, $animalWeight, $animalLivingRegion) =
-        explode(" ", $input);
+    $input = explode(" ", $input);
+
+    $animalType = $input[0];
+    $animalName = $input[1];
+    $animalWeight = floatval($input[2]);
+    $animalLivingRegion = $input[3];
 
     if (count($input) == 5 && $animalType == "Cat") {
         $catBread = $input[4];
@@ -26,12 +28,15 @@ while ('End' != $input = trim(fgets(STDIN))) {
     }
 
     $food = null;
-    list($foodType, $foodQuantity) = explode(" ", trim(fgets(STDIN)));
+
+    $odd = explode(' ', trim(fgets(STDIN)));
+    $foodType = $odd [0];
+    $foodQuantity = floatval($odd [1]);
 
     if ($foodType == "Meat") {
-        $food = new Meat(floatval($foodQuantity), $foodType);
+        $food = new Meat($foodQuantity, $foodType);
     } else if ($foodType == "Vegetable") {
-        $food = new Vegatable(floatval($foodQuantity), $foodType);
+        $food = new Vegatable($foodQuantity, $foodType);
     }
 
     echo $animal->makeSound() . PHP_EOL;
