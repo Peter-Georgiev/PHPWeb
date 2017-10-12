@@ -1,0 +1,31 @@
+SELECT `firstname`, `lastname`, `email`, `jobtitle` FROM employees WHERE departmentid = (
+	SELECT departmentid FROM department WHERE departmentname = 'IT'
+)
+
+///////////////////////////////////////////////////////////////
+SELECT 
+	employees.firstname,
+	employees.lastname,
+	employees.email,
+	employees.jobtitle,
+	department.departmentname
+FROM 
+	employees
+INNER JOIN
+	department
+ON
+	department.departmentid = employees.departmentid
+	
+///////////////////////////////////////////////////////////////
+SELECT 
+	e.firstname,
+	e.lastname,
+	e.email,
+	e.jobtitle,
+	d.departmentname AS department
+FROM 
+	employees AS e
+INNER JOIN
+	department AS d
+ON
+	d.departmentid = e.departmentid
