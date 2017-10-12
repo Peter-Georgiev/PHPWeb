@@ -5,27 +5,48 @@ spl_autoload_register(function ($class) {
     require_once $class;
 });
 
-while ("" != $input = trim(fgets(STDIN))) {
+$output = [];
+$privates = [];
 
-    $input_arr = explode(" ", $input);
-    if (count($input_arr) == 5 && $input_arr[0] == "Private") {
-        $id = intval($input_arr[1]);
-        $firstName = $input_arr[2];
-        $lastName = $input_arr[3];
-        $salary = $input_arr[4];
+while (true) {
+    $input = array_map('trim', explode(' ', fgets(STDIN)));
+    try {
+        if ($input[0] == 'End') {
+            break;
+        }
 
-        $privateSoldier = new PrivateSoldier($id, $firstName, $lastName, $salary);
+        $id = $input[1];
+        $firstName = $input[2];
+        $lastName = $input[3];
+        $salary = floatval($input[4]);
 
-        echo $privateSoldier;
-    } elseif ($input_arr[0] == "LeutenantGeneral" && count($input_arr) >= 5) {
-        /*TODO
-         * 1.loop $input_arr[5] to  the end
-         * In loop:
-         *      created an object of type PrivateSoldier
-         *      array of object or array of integers (id's)
-         */
+        if ($input[0] == 'Private') {
+            $output[] = new PrivateSoldier($firstName, $lastName, $id, $salary);
+            $privates[] = new PrivateSoldier($firstName, $lastName, $id, $salary);
+        } else if ($input[0] == 'Spy') {
+            $codeNumber = $input[4];
+            $output[] = new Spy($firstName, $lastName, $id, $codeNumber);
+        } else if (($input[0] == 'Engineer' || $input[0] == 'Commando') && ($input[5] == 'Marines' || $input[5] == 'Airforces')) {
+            $parts = [];
+            $corps = $input[5];
+
+            for ($i = 6; $i < count($input); $i++) {
+                $parts[] = $input[$i];
+            }
+
+            if ($input[0] == 'Engineer') {
+                $output[] = new Engineer($firstName, $lastName, $id, $salary, $corps, $parts);
+            } else if ($input[0] == 'Commando') {
+                $output[] = new Commando($firstName, $lastName, $id, $salary, $corps, $parts);
+            }
+        } else if ($input[0] == 'LeutenantGeneral') {
+            $output[] = new LeutenantGeneral($firstName, $lastName, $id, $salary, $privates);
+        }
+    } catch (\Exception $e) {
+        echo ($e->getMessage()) . PHP_EOL;
     }
+}
 
-    //TODO
-
+foreach ($output as $soldier) {
+    echo $soldier;
 }

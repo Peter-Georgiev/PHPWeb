@@ -5,19 +5,19 @@ class PrivateSoldier extends Soldier
 {
     private $salary;
 
-    public function __construct(int $id, string $firstName, string $lastName, string $salary)
+    public function __construct(string $firstName, string $lastName, $id, float $salary)
     {
-        parent::__construct($id, $firstName, $lastName);
+        parent::__construct($firstName, $lastName, $id);
         $this->salary = $salary;
     }
 
-    //Todo setters
+    public function getSalary()
+    {
+        return $this->salary;
+    }
 
     public function __toString()
     {
-        return "Name: " . parent::__toString() .
-            $this->salary;
+        return parent::__toString() . ' Salary: ' . number_format($this->getSalary(), 2, '.', '') . PHP_EOL;
     }
-
-    //Todo getters
 }
