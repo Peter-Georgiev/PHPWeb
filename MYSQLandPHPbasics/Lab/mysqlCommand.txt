@@ -1,0 +1,89 @@
+SELECT `e.CardLow`, `c.EmployeeID` FROM `EvenRecord` AS e 
+INNER JOIN	`Card` AS c ON `e.CardLow` = `c.CardLow`
+
+"SELECT c.CardLow AS cardLow, d.DepartmentName AS dName " +
+            "FROM `Employee` AS e " +
+            "INNER JOIN `Card` AS c " +
+            "ON e.EmployeeID = c.EmployeeID WHERE(" +
+            "INNER JOIN `Department` AS d " +
+            "ON e.DepartmentID = d.DepartmentID)";
+			
+-- //////////
+user_id, user_name, first_name, last_name, create_date,	years		
+
+-- ////////////////////////////////////////////////////
+INSERT INTO `users` (USER_NAME, FIRST_NAME, LAST_NAME, CREATE_DATE, YEARS)
+VALUE ('pero23', 'Peter', 'Georgiev', NOW(), 24)
+-- //////////
+DELETE FROM `users` WHERE user_id = 2; -- Komentar
+-- //////////
+DELETE FROM `users` WHERE user_id IN (2,3);
+-- //////////
+UPDATE users SET LAST_NAME = 'Georgiev'
+WHERE USER_ID = 1
+AND FIRST_NAME = 'Gosho'
+-- //////////
+UPDATE users SET YEARS = YEARS + 10
+WHERE LAST_NAME = 'Georgiev'
+-- //////////
+UPDATE users SET FIRST_NAME = CONCAT(FIRST_NAME, '-AB-')
+WHERE USER_ID = 1
+-- //////////
+UPDATE users SET FIRST_NAME = REPLACE(FIRST_NAME, '-AB-', '555')
+WHERE USER_ID = 1
+-- //////////
+users SET YEARS = NULL
+WHERE USER_ID = 1
+//////////////////
+UPDATE users SET YEARS = 100
+WHERE YEARS IS NULL
+-- //////////
+SELECT *
+FROM users
+-- WHERE create_date IS NULL
+ORDER BY user_id
+LIMIT 3, 2
+-- //////////
+SELECT user_id, first_name, last_name AS Lname,
+CONCAT(first_name, last_name) AS FLnames
+FROM users
+ORDER BY Lname
+-- //////////
+SELECT user_id, first_name, last_name AS Lname,
+CONCAT(first_name, CONCAT(' ', last_name)) AS FLnames
+FROM users
+ORDER BY Lname
+-- //////////
+SELECT *
+FROM users
+WHERE years >= 30 OR user_name = 'ivan'
+-- //////////
+SELECT *
+FROM users
+WHERE (user_name = 'ivan'
+		OR 
+		user_name = 'pesho')
+	AND years >= 30
+-- //////////
+SELECT *
+FROM users
+WHERE (user_name = 'ivan'
+		OR 
+		user_name = 'pesho')
+	AND (years >= 30
+			OR
+			years <= 60)
+-- //////////
+SELECT *
+FROM users
+WHERE years IN (30, 60)
+-- //////////
+TRUNCATE TABLE Users -- Изчиства цялата таблица
+-- //////////
+$db = new PDO(); - универсален
+$db = new mysqli(); - само за mysql
+-- //////////
+-- //////////
+
+
+
