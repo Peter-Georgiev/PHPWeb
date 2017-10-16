@@ -11,6 +11,12 @@ INNER JOIN	`Card` AS c ON `e.CardLow` = `c.CardLow`
 -- //////////
 user_id, user_name, first_name, last_name, create_date,	years		
 
+
+INSERT INTO students (first_name, last_name, student_number, phone, home_address, date_record, date_last_change, student_active, motivation_letter, notes)
+VALUE ('Petar', 'Georgiev', 200077286, '+359 894 622 954', '6, Osvobozhdenie Street, Karlovo', NOW(), NOW(), 'Y', 'Creating a new programme is always an interesting challenge for me.', 'Exciting'),
+('Peter', 'Georgiev', 203077286, '+359 2 999 976', '64, Osvobozhdenie Street, Sofia', NOW(), NOW(), 'Y', 'The new software makes people\'s lives easier.', 'Practical')
+   
+
 -- ////////////////////////////////////////////////////
 INSERT INTO `users` (USER_NAME, FIRST_NAME, LAST_NAME, CREATE_DATE, YEARS)
 VALUE ('pero23', 'Peter', 'Georgiev', NOW(), 24)
