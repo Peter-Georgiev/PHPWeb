@@ -1,4 +1,7 @@
+-- Create new database with name “php-course”
 CREATE DATABASE `php-course` /*!40100 COLLATE 'utf8_general_ci' */
+
+-- Create table with name “students”
 CREATE TABLE `students` (
 	`id` INT(11) NOT NULL AUTO_INCREMENT,
 	`student_number` INT(11) NOT NULL,
@@ -15,5 +18,9 @@ CREATE TABLE `students` (
 COLLATE='utf8_general_ci'
 ENGINE=InnoDB
 ;
+
+--	Delete table “students”
 DROP TABLE students
+
+--	Delete database  “students”
 DROP DATABASE `php-course`
