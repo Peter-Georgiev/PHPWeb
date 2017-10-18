@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 class CallCenter
 {
-
     private $db_inst = false;
 
     public function connectDB()
@@ -17,43 +16,43 @@ class CallCenter
         $this->connectDB();
     }
 
-    public function main()
+    public function main(float $n)
     {
-        echo "Problem 7. Call Center Application - Enter number: 7" .PHP_EOL;
-        echo "Problem 7.1. Add Currency and Continent - Enter number: 7.1" . PHP_EOL;
-        echo "Problem 7.2. Customers in the Mountain - Enter number: 7.2" . PHP_EOL;
-        echo "Problem 7.3. Special Ski Equipment - Enter number: 7.3" . PHP_EOL;
-        echo "Problem 9. Add Customer Functionality - Enter number: 9" . PHP_EOL;
-        echo "Problem 10. Delete Customer Functionality - Enter number: 10" . PHP_EOL;
-
-        echo "Enter number from problem: ";
-        $n = floatval(fgets(STDIN));
-        echo PHP_EOL;
-        if ($n == 7) {
+        if ($n == 7) { // Problem 7. Call Center Application
             while ("Bye" != $input_str = trim(fgets(STDIN))) {
                 $this->getCallCenterApplication($input_str);
             }
-        } elseif ($n == 7.1) {
+        } elseif ($n == 7.1) { // Problem 7.1. Add Currency and Continent
             while ("Bye" != $input_str = trim(fgets(STDIN))) {
                 $this->getAddCurrencyAndContinent($input_str);
             }
-        } elseif ($n == 7.2) {
+        } elseif ($n == 7.2) { // Problem 7.2. Customers in the Mountain
             while ("Bye" != $input_str = trim(fgets(STDIN))) {
                 $this->getCustomersInTheMountain($input_str);
             }
-        } elseif ($n == 7.3) {
+        } elseif ($n == 7.3) { // Problem 7.3. Special Ski Equipment
             while ("Bye" != $input_str = trim(fgets(STDIN))) {
                 $this->getSpecialSkiEquipment($input_str);
             }
-        } elseif ($n == 9) {
+        } elseif ($n >= 9 && $n < 12) {
+            // Problem 9. Add Customer Functionality, Problem 10. Delete Customer Functionality
+            // Problem 11. Customers in Specific Country*, Problem 12. Customers in Specific Continent**
             while ("Bye" != $input_str = trim(fgets(STDIN))) {
-                $iso = $this->addCustomer($input_str);
-                $this->getAddCurrencyAndContinent($iso);
-                $this->getCustomerISO($iso);
-            }
-        } elseif ($n == 10) {
-            while ("Bye" != $input_str = trim(fgets(STDIN))) {
-                $this->delCustomer($input_str);
+                $tokens = explode(' ', $input_str);
+                $command = trim($tokens[0]);
+
+                if ($command == "Customer") {
+                    $iso = $this->addCustomer($input_str);
+                    $this->getAddCurrencyAndContinent($iso[0]);
+                    $this->getCustomerISO(intval($iso[1]));
+                } elseif (explode(',', $command)[0] == "Remove") {
+                    $this->delCustomer($input_str);
+                } elseif ($command == "Customers" && count($tokens) == 3) {
+                    echo substr(trim($input_str), 0, -1) . ":" . PHP_EOL;
+                    $this->getCustomersInCountry(substr(trim($tokens[2]), 0, -1));
+                } elseif ($command == "Customers" && count($tokens) == 4) {
+                    $this->getCustomersInContinent(substr(trim($tokens[3]), 0, -1));
+                }
             }
         }
     }
@@ -61,11 +60,12 @@ class CallCenter
     private function getCountryInfo(string $str)
     {
         $stmt = $this->db_inst->query("
-            SELECT `country_name`, `capital` FROM `countries`
-                WHERE `country_name` = '$str'
-                    OR `country_code` = '$str'
-                    OR `iso_code` = '$str'
-                LIMIT 0,1");
+            SELECT `country_name`, `capital` 
+                FROM `countries`
+                    WHERE `country_name` = '$str'
+                        OR `country_code` = '$str'
+                        OR `iso_code` = '$str'
+                    LIMIT 0,1");
         return $stmt;
     }
 
@@ -112,9 +112,9 @@ class CallCenter
                     JOIN `mountains_countries` AS mc
                       ON m.id = mc.mountain_id
                     JOIN `peaks` AS p
-                        ON m.id = p.mountain_id
+                      ON m.id = p.mountain_id
                     WHERE mc.country_code = '$str'
-                        ANd p.elevation > 4000");
+                      AND p.elevation > 4000");
 
         $hasStmt = false;
         foreach ($stmt as $value) {
@@ -131,7 +131,7 @@ class CallCenter
     private function getCountryISO(string $str)
     {
         $stmt = $this->db_inst->query("
-            SELECT country_code
+            SELECT country_code 
                 FROM `countries`
                   WHERE country_code = '$str'
                     OR iso_code = '$str'
@@ -139,12 +139,15 @@ class CallCenter
         return $stmt;
     }
 
-    private function getCustomerISO(string $str)
+    private function getCustomersInCountry(string $country_name)
     {
         $stmt = $this->db_inst->query("
-            SELECT customer_name, customer_family
-                FROM `customer`
-                  WHERE country_code = '$str'");
+            SELECT cs.customer_name, cs.customer_family
+                FROM countries AS cn
+                    JOIN customer AS cs
+                        ON cn.country_code = cs.country_code
+                    WHERE cn.iso_code = '$country_name'
+                        OR cn.country_name = '$country_name'");
         $hasDB = false;
         foreach ($stmt as $value) {
             echo "Name: " . $value["customer_name"] . PHP_EOL;
@@ -157,7 +160,51 @@ class CallCenter
         }
     }
 
-    private function addCustomer(string $str): string
+    private function getCustomersInContinent(string $country_name)
+    {
+        $stmt = $this->db_inst->query("
+            SELECT cs.customer_name, cs.customer_family, cn.country_name
+                FROM continents AS con
+                    JOIN countries AS cn
+                        ON con.continent_code = cn.continent_code
+                    JOIN customer AS cs
+                        ON cn.country_code = cs.country_code
+                    WHERE con.continent_name = '$country_name'");
+        $hasDB = false;
+        $count = 0;
+        foreach ($stmt as $value) {
+            if ($count == 0) {
+                echo "Customers in " . $value["country_name"] . ":" . PHP_EOL;
+            }
+            echo $value["customer_name"] . " " . $value["customer_family"] . PHP_EOL;
+            $hasDB = true;
+            $count++;
+        }
+
+        if (!$hasDB) {
+            echo "Could not read from DB." . PHP_EOL;
+        }
+    }
+
+    private function getCustomerISO(int $id)
+    {
+        $stmt = $this->db_inst->query("
+            SELECT customer_name, customer_family
+                FROM `customer`
+                  WHERE id = '$id'");
+        $hasDB = false;
+        foreach ($stmt as $value) {
+            echo "Name: " . $value["customer_name"] . PHP_EOL;
+            echo "Garabe: " . $value["customer_family"] . PHP_EOL;
+            $hasDB = true;
+        }
+
+        if (!$hasDB) {
+            echo "Could not read from DB." . PHP_EOL;
+        }
+    }
+
+    private function addCustomer(string $str): array
     {
         $tokens = explode(',', $str);
         $tokensISO = explode(' ', $tokens[0]);
@@ -170,7 +217,7 @@ class CallCenter
         $iso = "";
         $stmt = $this->getCountryISO(trim($tokensISO[1]));
         foreach ($stmt as $value) {
-            ($iso = $value["country_code"]);
+            $iso = $value["country_code"];
             break;
         }
 
@@ -187,12 +234,9 @@ class CallCenter
         $customer_family = $lName;
         $country_code = $iso;
 
-        $stmt->bindParam(1, $customer_name);
-        $stmt->bindParam(2, $customer_family);
-        $stmt->bindParam(3, $country_code);
-
-        $stmt->execute();
-        return $iso;
+        $stmt->execute([$customer_name, $customer_family, $country_code]);
+        $id = $this->db_inst->lastInsertId();
+        return array($iso, "$id");
     }
 
     private function delCustomer(string $str)
@@ -212,9 +256,7 @@ class CallCenter
         $customer_name = $fName;
         $customer_family = $lName;
 
-        $stmt->bindParam(1, $customer_name);
-        $stmt->bindParam(2, $customer_family);
-        $stmt->execute();
+        $stmt->execute([$customer_name, $customer_family]);
 
         if ($stmt->rowCount() > 0) {
             echo "Customer $fName $lName removed" . PHP_EOL;

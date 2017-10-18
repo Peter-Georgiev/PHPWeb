@@ -5,7 +5,7 @@ class Database extends PDO
     private $db_host = "localhost";
     private $db_name = "geography";
     private $db_username = "root";
-    private $db_password = "peroxmen";
+    private $db_password = "******";
 
     /**
      * Database constructor.
