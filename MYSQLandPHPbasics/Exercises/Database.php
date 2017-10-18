@@ -7,9 +7,12 @@ class Database extends PDO
     private $db_username = "root";
     private $db_password = "peroxmen";
 
+    /**
+     * Database constructor.
+     */
     public function __construct()
     {
-        parent::__construct("mysql:dbname=$this->db_name;host=$this->db_host", $this->db_username, $this->db_password);
+        parent::__construct("mysql:dbname=$this->db_name;host=$this->db_host;charset=utf8", $this->db_username, $this->db_password);
     }
 
     public function setErrorException()
