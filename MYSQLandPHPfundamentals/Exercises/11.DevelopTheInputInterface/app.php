@@ -117,11 +117,11 @@ function updateEmployee(PDO $db, string $readCLI)
             echo "Which e-mail and telephone number must be updated?" . PHP_EOL;
         }
 
-        echo "Enter type e-mail: ";
+        echo "Enter type e-mail (personal/work/other): ";
         $emailType = trim(fgets(STDIN));
         echo "Enter old e-mail: ";
         $oldEmail = trim(fgets(STDIN));
-        echo "Enter type phone: ";
+        echo "Enter type phone (personal/work/other): ";
         $phoneType = trim(fgets(STDIN));
         echo "Enter old phone: ";
         $oldPhone = trim(fgets(STDIN));
