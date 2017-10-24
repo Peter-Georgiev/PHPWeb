@@ -16,6 +16,17 @@
 CREATE DATABASE IF NOT EXISTS `php-course` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `php-course`;
 
+-- Dumping structure for function php-course.concat_name
+DELIMITER //
+CREATE DEFINER=`root`@`%` FUNCTION `concat_name`(
+	first_name VARCHAR(50),
+	last_name VARCHAR(50)
+) RETURNS varchar(255) CHARSET utf8
+BEGIN
+	RETURN CONCAT(first_name, ' ', last_name);
+END//
+DELIMITER ;
+
 -- Dumping structure for table php-course.courses
 CREATE TABLE IF NOT EXISTS `courses` (
   `course_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -26,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `courses` (
 
 -- Dumping data for table php-course.courses: ~4 rows (approximately)
 /*!40000 ALTER TABLE `courses` DISABLE KEYS */;
-REPLACE INTO `courses` (`course_id`, `course_name`) VALUES
+INSERT INTO `courses` (`course_id`, `course_name`) VALUES
 	(4, 'C#'),
 	(12, 'Java'),
 	(13, 'JS'),
@@ -41,16 +52,19 @@ CREATE TABLE IF NOT EXISTS `students` (
   `student_number` int(11) DEFAULT NULL,
   PRIMARY KEY (`student_id`),
   UNIQUE KEY `student_number` (`student_number`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
 
--- Dumping data for table php-course.students: ~5 rows (approximately)
+-- Dumping data for table php-course.students: ~8 rows (approximately)
 /*!40000 ALTER TABLE `students` DISABLE KEYS */;
-REPLACE INTO `students` (`student_id`, `first_name`, `last_name`, `student_number`) VALUES
-	(3, 'Minko', 'Georgiev', 997977987),
+INSERT INTO `students` (`student_id`, `first_name`, `last_name`, `student_number`) VALUES
+	(3, 'Minko', 'Antonov', 100001),
 	(4, 'Peter', 'Georgiev', 997977982),
 	(5, 'Pesho', 'Georgiev', 123123987),
-	(14, 'Emil', 'Georgiev', 123125437),
-	(15, 'Georgi', 'Georgiev', 153555437);
+	(14, 'Emil', 'Dimitrov', 123125437),
+	(15, 'Georgi', 'Petrov', 153555437),
+	(17, 'Inko', 'Inkov', 9999999),
+	(31, 'Stanko', 'Mihov', 99991),
+	(33, 'Stanko', 'Mihov', 999912);
 /*!40000 ALTER TABLE `students` ENABLE KEYS */;
 
 -- Dumping structure for table php-course.student_subscriptions
@@ -65,12 +79,25 @@ CREATE TABLE IF NOT EXISTS `student_subscriptions` (
 
 -- Dumping data for table php-course.student_subscriptions: ~4 rows (approximately)
 /*!40000 ALTER TABLE `student_subscriptions` DISABLE KEYS */;
-REPLACE INTO `student_subscriptions` (`course_id`, `student_id`) VALUES
+INSERT INTO `student_subscriptions` (`course_id`, `student_id`) VALUES
 	(3, 3),
 	(4, 5),
 	(12, 14),
 	(13, 15);
 /*!40000 ALTER TABLE `student_subscriptions` ENABLE KEYS */;
+
+-- Dumping structure for trigger php-course.chack_student_number
+SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
+DELIMITER //
+CREATE TRIGGER `chack_student_number` BEFORE INSERT ON `students` FOR EACH ROW BEGIN
+DECLARE msg VARCHAR(32) DEFAULT "";
+	IF NEW.student_number < 10000 THEN
+		SET msg = 'INVALID STUDENT NUMBER';
+		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = msg;
+	END IF;
+END//
+DELIMITER ;
+SET SQL_MODE=@OLDTMP_SQL_MODE;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

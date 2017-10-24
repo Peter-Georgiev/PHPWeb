@@ -60,6 +60,14 @@ class PDODatabase
     }
 
     /**
+     * @return bool
+     */
+    public function rollBack()
+    {
+        return $this->pdo->rollBack();
+    }
+
+    /**
      * @return array
      */
     public function errorInfo()

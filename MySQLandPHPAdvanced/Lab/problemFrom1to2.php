@@ -38,6 +38,7 @@ while ("end" != $readCLI = trim(fgets(STDIN))) {
         $db->commit();
 
     } catch (Exception $e) {
+        $db->rollBack();
         echo $e->getMessage();
     }
 }
