@@ -93,17 +93,18 @@ class SalesModel extends Model
         }
     }
 
-    public function readTotal()
+    public function readTotal(): bool
     {
         $stmt = $this->db->prepare("
             SELECT SUM(`amount`) as `total_amount`
               FROM `sales`");
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        if ($row['total_amount'])
+        if ($row['total_amount']) {
             return $row['total_amount'];
-        else
+        } else {
             return false;
+        }
     }
 
     // Todo - problem 8

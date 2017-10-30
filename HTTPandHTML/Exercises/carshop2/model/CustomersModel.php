@@ -67,7 +67,7 @@ class CustomersModel extends Model
     }
 
     // Todo - problem 8
-    public function update(int $customer_id)
+    public function update(int $customer_id): bool
     {
         try {
             $stmt = $this->db->prepare("UPDATE `" . $this->table . "`
