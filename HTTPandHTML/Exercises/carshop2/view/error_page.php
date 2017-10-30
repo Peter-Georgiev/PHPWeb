@@ -1,1 +1,1 @@
-<img src="error.jpg" alt="" />
+<img src="view/error.jpg" height="330">

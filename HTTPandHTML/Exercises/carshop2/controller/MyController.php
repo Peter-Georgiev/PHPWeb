@@ -144,6 +144,7 @@ class MyController extends Controller
         }
     }
 
+    //Todo - Problem 8
     private function updateType()
     {
         include "view/update_type.php";
