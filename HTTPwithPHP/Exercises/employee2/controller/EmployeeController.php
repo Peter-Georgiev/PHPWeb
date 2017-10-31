@@ -14,5 +14,9 @@ class EmployeeController extends Controller
     {
         $m = new EmployeesModel($this->db);
         $res = $m->readAll();
+
+        $this->loadView("header.php");
+        $this->loadView("employee/view_all.php");
+        $this->loadView("footer.php");
     }
 }

@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 abstract class Controller
 {
@@ -18,10 +19,10 @@ abstract class Controller
 
     abstract public function main();
 
-    public function loadView($filename)
+    public function loadView(string $filename)
     {
-        if (file_exists($filename)) {
-
+        if (file_exists("view/" . $filename)) {
+            //include "view/.$filename";
         }
     }
 
