@@ -93,7 +93,7 @@ class SalesModel extends Model
         }
     }
 
-    public function readTotal(): bool
+    public function readTotal()
     {
         $stmt = $this->db->prepare("
             SELECT SUM(`amount`) as `total_amount`
