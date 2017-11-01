@@ -1,6 +1,6 @@
 <?php
 $db_host     = "localhost";
-$db_name     = "cars";
+$db_name     = "soft_uni";
 $db_user     = "root";
 $db_password = '4545';
 
