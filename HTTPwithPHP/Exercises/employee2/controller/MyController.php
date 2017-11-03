@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 class MyController extends Controller
 {
-
     public function main()
     {
         include "view/header.php";
