@@ -3,7 +3,7 @@ declare(strict_types=1);
 include "db_config.php";
 include "Employee.php";
 
-getEmailsOfEmployee($db);
+getEmailsOfEmployee($pdo);
 
 function getEmailsOfEmployee($db)
 {

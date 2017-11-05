@@ -3,7 +3,7 @@ declare(strict_types=1);
 include "db_config.php";
 include "Employee.php";
 
-countryOfEmploees($db);
+countryOfEmploees($pdo);
 
 /**
  * @param PDO $db

@@ -10,9 +10,9 @@ $readCLI = "Update, Peter, Georgiev, Georgiev, Passport 43IN243876846BGG, emails
 ";
 
 if (strtolower(explode(', ', $readCLI)[0]) == "insert") {
-    insertEmploees($db, $readCLI);
+    insertEmploees($pdo, $readCLI);
 } elseif (strtolower(explode(', ', $readCLI)[0]) == "update") {
-    updateEmployee($db, $readCLI);
+    updateEmployee($pdo, $readCLI);
 } elseif (strtolower(explode(', ', $readCLI)[0]) == "delete") {
     //TODO
 }

@@ -13,5 +13,5 @@ include "model/CustomersModel.php";
 
 // Load Controller class - it extends Controller.php
 include "controller/MyController.php";
-$main = new MyController($db);
+$main = new MyController($pdo);
 $main->main();

@@ -19,5 +19,5 @@ include "controller/EmployeeController.php";
 include "controller/AddressController.php";
 include "controller/MyController.php";
 
-$main = new MyController($db);
+$main = new MyController($pdo);
 $main->main();

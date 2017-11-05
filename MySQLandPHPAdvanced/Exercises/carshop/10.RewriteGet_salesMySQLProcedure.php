@@ -3,7 +3,7 @@ declare(strict_types=1);
 include "db_config.php";
 include "Carshop.php";
 
-$shop = new Carshop($db);
+$shop = new Carshop($pdo);
 
 //input_str = trim(fgets(STDIN));
 $input_str = "Sales,   2017-07, 2017-09";
