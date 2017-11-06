@@ -1,5 +1,5 @@
 <?php
-$db_host = "localhost";
+$db_host = "10.0.1.22";
 $db_name = "cars";
 $db_user = "root";
 $db_password = '4545';
