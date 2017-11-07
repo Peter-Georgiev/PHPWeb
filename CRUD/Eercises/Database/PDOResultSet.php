@@ -21,4 +21,11 @@ class PDOResultSet implements ResultSetInterface
             yield $row;
         }
     }
+
+    public function fetchAll(?string $className = null): \Generator
+    {
+        while ($row = $this->pdoStatement->fetchObject($className)) {
+            yield $row;
+        }
+    }
 }

@@ -15,14 +15,33 @@ use App\Service\UserServiceInterface;
 
 class UserHttpHandler extends HttpHandlerAbstract
 {
-    public function all(UserServiceInterface $userService)
+    public function all(UserServiceInterface $userService, array $formGetData = null)
     {
-        $this->render("users/all", $userService->viewAll());
+        $per_page = 3;
+        if (!empty($formGetData['p'])) {
+            $page = filter_var($formGetData['p'], FILTER_SANITIZE_NUMBER_INT);
+            if ($page > 0) {
+
+                $start = ($page - 1) * $per_page;
+                $this->render("users/all",
+                    $userService->viewPage($start, $per_page));
+
+            } else {
+                //TODO ERROR PEGES
+            }
+        } else {
+            $this->render("users/all", $userService->viewAll());
+        }
+
+        $data = [
+            'pages' => intval($userService->viewAllID()->getCoutID()/ $per_page) + 1
+        ];
+        $this->render("users/paging", $data);
     }
 
 
     public function profile(UserServiceInterface $userService,
-                            array $formData = [])
+                            array $formData = [], array $formGetData = null)
     {
         $currentUser = $userService->getCurrentUser();
         if (null === $currentUser) {
@@ -93,7 +112,7 @@ class UserHttpHandler extends HttpHandlerAbstract
     }
 
     private function handleEditProfile(UserServiceInterface $userService,
-                                        array $formData = [])
+                                       array $formData = [])
     {
         $user = $this->dataBinder->bind($formData, UserDTO::class);
         if ($userService->editProfile($user)) {

@@ -25,4 +25,14 @@ class PDOResultSet implements ResultSetInterface
             yield $row;
         }
     }
+
+    public function fetch($className): \Generator
+    {
+        // TODO: Implement fetch() method.
+    }
+
+    public function rowCount(): int
+    {
+        $this->pdoStatemet->rowCount();
+    }
 }

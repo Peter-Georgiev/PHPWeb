@@ -3,6 +3,7 @@
 namespace App\Service;
 
 
+use App\Data\CountIdDTO;
 use App\Data\UserDTO;
 use App\Repository\UserRepositoryInterface;
 
@@ -84,4 +85,18 @@ class UserService implements UserServiceInterface
     {
         return $this->userRepository->findAll();
     }
+
+    /**
+     * @return \Generator|UserDTO[]
+     */
+    public function viewPage(int $start = 0, int $pur_page = null): \Generator
+    {
+        return $this->userRepository->findAllPage($start, $pur_page);
+    }
+
+    public function viewAllID(): CountIdDTO
+    {
+        return $this->userRepository->countAll();
+    }
+
 }

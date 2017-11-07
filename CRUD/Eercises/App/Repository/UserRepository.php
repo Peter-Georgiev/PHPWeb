@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 
+use App\Data\CountIdDTO;
 use App\Data\UserDTO;
 use Database\DatabaseInterface;
 
@@ -55,8 +56,8 @@ class UserRepository implements UserRepositoryInterface
             FROM users
             WHERE id = ?
       ")->execute([$id])
-        ->fetch(UserDTO::class)
-        ->current();
+            ->fetch(UserDTO::class)
+            ->current();
     }
 
     public function update($id, UserDTO $user): bool
@@ -86,12 +87,37 @@ class UserRepository implements UserRepositoryInterface
     /**
      * @return \Generator|UserDTO[]
      */
-    public function findAll(): \Generator
+    public function findAll(int $start = 0, int $pur_page = null): \Generator
     {
         return $this->db->query("
-            SELECT id, username, password, first_name AS firstName, last_name AS lastName, born_on AS bornOn
-            FROM users
-      ")->execute()
+                SELECT id, username, password, first_name AS firstName, last_name AS lastName, born_on AS bornOn
+                FROM users")
+            ->execute()
             ->fetch(UserDTO::class);
+    }
+
+    /**
+     * @param int $start
+     * @param int|null $pur_page
+     * @return \Generator|UserDTO[]
+     */
+    public function findAllPage(int $start = 0, int $pur_page = null): \Generator
+    {
+        return $this->db->query("
+                SELECT id, username, password, first_name AS firstName, last_name AS lastName, born_on AS bornOn
+                FROM users
+                LIMIT " . $start . ", " . $pur_page . "
+        ")->execute()
+            ->fetch(UserDTO::class);
+    }
+
+    public function countAll(): CountIdDTO
+    {
+        return $this->db->query("
+                SELECT COUNT(id) AS countID
+                FROM users
+        ")->execute()
+            ->fetch(CountIdDTO::class)
+            ->current();
     }
 }
