@@ -35,6 +35,10 @@
     <div>
         <input type="submit" name="edit" value="Edit Profile!"/>
     </div>
+    <?php ?>
 </form>
-
-You can <a href="logout.php">logout</a> or see <a href="all.php">all users</a>.
+View all emails per profile: <a href="one_user_per_mail.php">view</a> .
+<br/>
+Edit email address <a href="add_email.php">ADD</a>.
+<br/>
+You can <a href="logout.php">logout</a> or see <a href="all.php">all users</a>, <a href="all_user_per_mail.php">all emails per user</a> .

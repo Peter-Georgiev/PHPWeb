@@ -34,7 +34,7 @@ class UserHttpHandler extends HttpHandlerAbstract
         }
 
         $data = [
-            'pages' => intval($userService->viewAllID()->getCoutID()/ $per_page) + 1
+            'pages' => ceil($userService->viewAllID()->getCoutID()/ $per_page)
         ];
         $this->render("users/paging", $data);
     }

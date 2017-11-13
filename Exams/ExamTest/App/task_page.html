@@ -1,0 +1,41 @@
+<form method="post">
+    <div>
+        <label>
+            Title:
+            <input type="text" minlength="3" name="title" required/>
+        </label>
+    </div>
+    <div>
+        <label>
+            Description:
+            <textarea minlength="10" maxlength="10000" name="description" required></textarea>
+        </label>
+    </div>
+    <div>
+        <label>
+            Category:
+            <select name="category" required></select>
+        </label>
+    </div>
+    <div>
+        <label>
+            Location:
+            <input type="text" minlength="3" name="location" required/>
+        </label>
+    </div>
+    <div>
+        <label>
+            Started on:
+            <input type="date" name="started_on" required/>
+        </label>
+    </div>
+    <div>
+        <label>
+            Due date:
+            <input type="date" name="due_date" required/>
+        </label>
+    </div>
+    <div>
+        <input type="submit" name="add" value="Add!" />
+    </div>
+</form>
