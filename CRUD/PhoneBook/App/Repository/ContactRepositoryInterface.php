@@ -9,12 +9,14 @@ interface ContactRepositoryInterface
 {
     //CRUD
 
-    public function insert(ContactDTO $contact);
+    public function insert(ContactDTO $contact): int ;
 
-    public function read();
+    public function read(): ContactDTO;
 
-    public function update(ContactDTO $contact);
+    public function update(ContactDTO $contact): bool ;
 
-    public function delete(int $id);
+    public function delete(int $id, ContactDTO $contact): bool ;
+
+    public function findByOnePhoneNumber(string $phoneNumber): ContactDTO;
 
 }

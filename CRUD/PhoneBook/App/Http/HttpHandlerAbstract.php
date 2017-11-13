@@ -19,7 +19,7 @@ abstract class HttpHandlerAbstract
     }
 
     // абстракция - рендериране
-    protected function render(string $templateName, $data = null)
+    public function render(string $templateName, $data = null)
     {
         $this->template->render($templateName, $data);
     }

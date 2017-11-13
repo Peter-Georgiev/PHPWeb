@@ -10,7 +10,14 @@ class ContactDTO
     private $firstNumber;
     private $lastNumber;
 
-    public function create(int $id, string $phoneNumber, string $firstNumber, string $lastNumber)
+    /**
+     * @param string $phoneNumber
+     * @param string $firstNumber
+     * @param string $lastNumber
+     * @param null $id
+     * @return ContactDTO
+     */
+    public static function create(string $phoneNumber, string $firstNumber, string $lastNumber, $id = null): ContactDTO
     {
         return (new ContactDTO())
             ->setId($id)
@@ -19,44 +26,32 @@ class ContactDTO
             ->setLastNumber($lastNumber);
     }
 
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
+    public function setId($id): ContactDTO
     {
         $this->id = $id;
         return $this;
     }
 
-    /**
-     * @param mixed $phoneNumber
-     */
-    public function setPhoneNumber($phoneNumber)
+    public function setPhoneNumber($phoneNumber): ContactDTO
     {
         $this->phoneNumber = $phoneNumber;
         return $this;
     }
 
-    /**
-     * @param mixed $firstNumber
-     */
-    public function setFirstNumber($firstNumber)
+    public function setFirstNumber($firstNumber): ContactDTO
     {
         $this->firstNumber = $firstNumber;
         return $this;
     }
 
-    /**
-     * @param mixed $lastNumber
-     */
-    public function setLastNumber($lastNumber)
+    public function setLastNumber($lastNumber): ContactDTO
     {
         $this->lastNumber = $lastNumber;
         return $this;
     }
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getId()
     {
@@ -64,7 +59,7 @@ class ContactDTO
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getPhoneNumber()
     {
@@ -72,7 +67,7 @@ class ContactDTO
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getFirstNumber()
     {
@@ -80,7 +75,7 @@ class ContactDTO
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getLastNumber()
     {
