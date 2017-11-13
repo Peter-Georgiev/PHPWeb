@@ -9,7 +9,13 @@
 namespace Core;
 
 
-class View
+class View implements ViewInterface
 {
+    const VIEW_FOLDER = 'View';
+    const VIEW_EXTENSION = '.php';
 
+    public function render(string $viewName, $model = null)
+    {
+        include self::VIEW_FOLDER.'/'.$viewName.self::VIEW_EXTENSION;
+    }
 }
