@@ -1,21 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Peter
- * Date: 13.11.2017
- * Time: 17:05 ч.
- */
 
 namespace Core;
 
 
 class View implements ViewInterface
 {
-    const VIEW_FOLDER = 'View';
-    const VIEW_EXTENSION = '.php';
+    const TEMPLATES_FOLDER = 'templates/';
+    const TEMPLATES_EXTENSION = '.php';
 
-    public function render(string $viewName, $model = null)
+    public function render(string $templateName, $data = null)
     {
-        include self::VIEW_FOLDER.'/'.$viewName.self::VIEW_EXTENSION;
+        include "self::TEMPLATES_FOLDER . $templateName . self::TEMPLATES_EXTENSION";
     }
 }

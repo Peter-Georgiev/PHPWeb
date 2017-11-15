@@ -3,7 +3,7 @@
 namespace Model;
 
 
-class UserRegisterViewModel
+class UserRegisterFullViewModel
 {
     /** @var  int */
     private $id;
