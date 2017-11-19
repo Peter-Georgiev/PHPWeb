@@ -1,1 +1,0 @@
-<img src="templates/images/1_149_110.jpg" />

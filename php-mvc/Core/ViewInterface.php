@@ -5,5 +5,6 @@ namespace Core;
 
 interface ViewInterface
 {
-    public function render(string $viewName, $data = null);
+
+  public function render(string $viewName, $model);
 }
