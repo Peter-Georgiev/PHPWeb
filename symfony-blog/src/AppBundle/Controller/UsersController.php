@@ -6,29 +6,24 @@ use AppBundle\Entity\User;
 use AppBundle\Form\UserType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class UsersController extends Controller
 {
-    public function register()
-    {
-        return $this->render('security/register.html.twig');
-    }
-
     /**
      * @Route("register")
      * @param Request $request
-     * @return Response
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function registerAction(Request $request)
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
+        $form->handleRequest($request);
 
         if ($form->isValid()) {
             $password = $this->get('security.password_encoder')
-            ->encodePassword($user, $user->getPassword());
+                ->encodePassword($user, $user->getPassword());
 
             $user->setPassword($password);
 

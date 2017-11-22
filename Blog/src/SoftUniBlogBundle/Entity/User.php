@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace SoftUniBlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -9,7 +9,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * User
  *
  * @ORM\Table(name="users")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
+ * @ORM\Entity(repositoryClass="SoftUniBlogBundle\Repository\UserRepository")
  */
 class User implements UserInterface
 {
@@ -25,16 +25,9 @@ class User implements UserInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255, unique=true)
+     * @ORM\Column(name="email", type="string", length=100, unique=true)
      */
     private $email;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="password", type="string", length=255)
-     */
-    private $password;
 
     /**
      * @var string
@@ -43,6 +36,12 @@ class User implements UserInterface
      */
     private $fullName;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=255)
+     */
+    private $password;
 
     /**
      * Get id
@@ -79,30 +78,6 @@ class User implements UserInterface
     }
 
     /**
-     * Set password
-     *
-     * @param string $password
-     *
-     * @return User
-     */
-    public function setPassword($password)
-    {
-        $this->password = $password;
-
-        return $this;
-    }
-
-    /**
-     * Get password
-     *
-     * @return string
-     */
-    public function getPassword()
-    {
-        return $this->password;
-    }
-
-    /**
      * Set fullName
      *
      * @param string $fullName
@@ -127,6 +102,30 @@ class User implements UserInterface
     }
 
     /**
+     * Set password
+     *
+     * @param string $password
+     *
+     * @return User
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Get password
+     *
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
      * Returns the roles granted to the user.
      *
      * <code>
@@ -144,7 +143,7 @@ class User implements UserInterface
      */
     public function getRoles()
     {
-        return [];
+        return ['ROLE_USER'];
     }
 
     /**
@@ -178,6 +177,11 @@ class User implements UserInterface
     public function eraseCredentials()
     {
         // TODO: Implement eraseCredentials() method.
+    }
+	
+	function __toString()
+    {
+        return $this->fullName;
     }
 }
 
