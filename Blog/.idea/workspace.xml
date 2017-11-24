@@ -61,10 +61,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2227">
               <caret line="131" column="53" lean-forward="false" selection-start-line="131" selection-start-column="53" selection-end-line="131" selection-end-column="53" />
-              <folding>
-                <element signature="e#48#107#0#PHP" expanded="true" />
-                <element signature="e#4039#4065#0#PHP" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -72,12 +69,9 @@
       <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SoftUniBlogBundle/Controller/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-              <folding>
-                <element signature="e#48#108#0#PHP" expanded="true" />
-                <element signature="e#537#559#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="68">
+              <caret line="7" column="57" lean-forward="true" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -282,8 +276,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -396,16 +390,19 @@
       <workItem from="1511361148014" duration="1565000" />
       <workItem from="1511367256397" duration="12900000" />
       <workItem from="1511425021726" duration="6098000" />
+      <workItem from="1511454141045" duration="3000" />
+      <workItem from="1511538778449" duration="206000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48014000" />
+    <option name="totallyTimeSpent" value="48223000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="886" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17191978" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17621776" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32756326" sideWeight="0.504298" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1504298" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -517,7 +514,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="4" lean-forward="false" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -574,7 +570,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -589,7 +584,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -597,7 +591,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -605,7 +598,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-232">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -620,9 +612,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="34" lean-forward="false" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
-          <folding>
-            <element signature="e#842#849#0#HTML" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -630,7 +619,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="313">
           <caret line="23" column="26" lean-forward="true" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -638,7 +626,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="27" lean-forward="false" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -646,9 +633,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
           <caret line="12" column="111" lean-forward="false" selection-start-line="12" selection-start-column="111" selection-end-line="12" selection-end-column="111" />
-          <folding>
-            <element signature="e#192#206#0#Twig" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -656,7 +640,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -664,7 +647,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -672,7 +654,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -680,7 +661,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="55" lean-forward="false" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -696,9 +676,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="543">
           <caret line="63" column="7" lean-forward="false" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
-          <folding>
-            <element signature="e#48#107#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -706,9 +683,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-          <folding>
-            <element signature="e#44#92#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -716,7 +690,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="45" lean-forward="false" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -724,7 +697,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="28" column="56" lean-forward="false" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -732,7 +704,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
           <caret line="25" column="79" lean-forward="false" selection-start-line="25" selection-start-column="76" selection-end-line="25" selection-end-column="79" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -740,39 +711,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1928">
           <caret line="259" column="29" lean-forward="false" selection-start-line="259" selection-start-column="29" selection-end-line="259" selection-end-column="29" />
-          <folding>
-            <element signature="e#1475#1511#0#PHP" expanded="false" />
-            <element signature="e#1516#1652#0#PHP" expanded="false" />
-            <element signature="e#1658#1709#0#PHP" expanded="false" />
-            <element signature="e#1714#1775#0#PHP" expanded="false" />
-            <element signature="e#1781#1871#0#PHP" expanded="false" />
-            <element signature="e#1876#1974#0#PHP" expanded="false" />
-            <element signature="e#1980#2037#0#PHP" expanded="false" />
-            <element signature="e#2042#2109#0#PHP" expanded="false" />
-            <element signature="e#2115#2211#0#PHP" expanded="false" />
-            <element signature="e#2216#2326#0#PHP" expanded="false" />
-            <element signature="e#2332#2392#0#PHP" expanded="false" />
-            <element signature="e#2397#2470#0#PHP" expanded="false" />
-            <element signature="e#2476#2572#0#PHP" expanded="false" />
-            <element signature="e#2577#2687#0#PHP" expanded="false" />
-            <element signature="e#2693#2753#0#PHP" expanded="false" />
-            <element signature="e#2758#2831#0#PHP" expanded="false" />
-            <element signature="e#2837#3045#0#PHP" expanded="false" />
-            <element signature="e#3050#3108#0#PHP" expanded="false" />
-            <element signature="e#3114#3226#0#PHP" expanded="false" />
-            <element signature="e#3231#3301#0#PHP" expanded="false" />
-            <element signature="e#3307#3344#0#PHP" expanded="false" />
-            <element signature="e#3349#3422#0#PHP" expanded="false" />
-            <element signature="e#3428#3497#0#PHP" expanded="false" />
-            <element signature="e#3502#3616#0#PHP" expanded="false" />
-            <element signature="e#3622#4031#0#PHP" expanded="false" />
-            <element signature="e#4036#4275#0#PHP" expanded="false" />
-            <element signature="e#4281#4344#0#PHP" expanded="false" />
-            <element signature="e#4349#4451#0#PHP" expanded="false" />
-            <element signature="e#4457#4653#0#PHP" expanded="false" />
-            <element signature="e#4658#4758#0#PHP" expanded="false" />
-            <element signature="e#4764#4826#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -780,7 +718,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="233">
           <caret line="27" column="43" lean-forward="false" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -788,21 +725,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2227">
           <caret line="131" column="53" lean-forward="false" selection-start-line="131" selection-start-column="53" selection-end-line="131" selection-end-column="53" />
-          <folding>
-            <element signature="e#48#107#0#PHP" expanded="true" />
-            <element signature="e#4039#4065#0#PHP" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SoftUniBlogBundle/Controller/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-          <folding>
-            <element signature="e#48#108#0#PHP" expanded="true" />
-            <element signature="e#537#559#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="68">
+          <caret line="7" column="57" lean-forward="true" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>

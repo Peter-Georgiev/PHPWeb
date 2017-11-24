@@ -10,7 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class HomeController extends Controller
 {
     /**
-     * @Route("/", name="blog_index")
+     * @Route("/", name="blog_indexy")
      * @Method("GET")
      */
     public function indexAction()
